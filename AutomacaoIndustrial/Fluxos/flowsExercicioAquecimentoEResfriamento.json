@@ -1,0 +1,303 @@
+[
+    {
+        "id": "5536eb54a8031e3f",
+        "type": "tab",
+        "label": "Fluxo 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b25b6768de0b96d",
+        "type": "inject",
+        "z": "5536eb54a8031e3f",
+        "name": "Entrada_01",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "15",
+        "payloadType": "num",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "0911916fec35b126"
+            ]
+        ]
+    },
+    {
+        "id": "3c640850edbd0aad",
+        "type": "inject",
+        "z": "5536eb54a8031e3f",
+        "name": "Entrada_02",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "num",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "0911916fec35b126"
+            ]
+        ]
+    },
+    {
+        "id": "031da7b9bd42e34e",
+        "type": "inject",
+        "z": "5536eb54a8031e3f",
+        "name": "Entrada_03",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "35",
+        "payloadType": "num",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "0911916fec35b126"
+            ]
+        ]
+    },
+    {
+        "id": "0911916fec35b126",
+        "type": "change",
+        "z": "5536eb54a8031e3f",
+        "name": "Change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload*1.8+32",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "Sala_De_Servidores",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "25e8edc7d99d826b"
+            ]
+        ]
+    },
+    {
+        "id": "25e8edc7d99d826b",
+        "type": "switch",
+        "z": "5536eb54a8031e3f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "68",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "77",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "68",
+                "vt": "num",
+                "v2": "77",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "6ca2f6bc1c6b2087"
+            ],
+            [
+                "cc1360d548ede0e1"
+            ],
+            [
+                "86a5b7e1f8668b7c"
+            ]
+        ]
+    },
+    {
+        "id": "6ca2f6bc1c6b2087",
+        "type": "change",
+        "z": "5536eb54a8031e3f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Sistema de aquecimento",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 120,
+        "wires": [
+            [
+                "71609868efc3c2a5"
+            ]
+        ]
+    },
+    {
+        "id": "cc1360d548ede0e1",
+        "type": "change",
+        "z": "5536eb54a8031e3f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Sistema de Ventilação",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 180,
+        "wires": [
+            [
+                "6577f89971034681"
+            ]
+        ]
+    },
+    {
+        "id": "86a5b7e1f8668b7c",
+        "type": "change",
+        "z": "5536eb54a8031e3f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Não há necessidade de ativar sistemas",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [
+                "c28e2108bed0bc21"
+            ]
+        ]
+    },
+    {
+        "id": "71609868efc3c2a5",
+        "type": "debug",
+        "z": "5536eb54a8031e3f",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6577f89971034681",
+        "type": "debug",
+        "z": "5536eb54a8031e3f",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c28e2108bed0bc21",
+        "type": "debug",
+        "z": "5536eb54a8031e3f",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 240,
+        "wires": []
+    }
+]

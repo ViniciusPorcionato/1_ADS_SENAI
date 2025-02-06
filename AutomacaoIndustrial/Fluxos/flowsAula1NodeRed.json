@@ -1,0 +1,358 @@
+[
+    {
+        "id": "ea3455aff8475092",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ca94564008225a88",
+        "type": "inject",
+        "z": "ea3455aff8475092",
+        "name": "Entrada",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "ec9915a5ebb9d02f"
+            ]
+        ]
+    },
+    {
+        "id": "ec9915a5ebb9d02f",
+        "type": "debug",
+        "z": "ea3455aff8475092",
+        "name": "Saida",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "db5345b614fe7c73",
+        "type": "change",
+        "z": "ea3455aff8475092",
+        "name": "Change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Vai Corinthians!",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Saudação",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "67e75d06653669b1"
+            ]
+        ]
+    },
+    {
+        "id": "ec8a1dc0a9f60d84",
+        "type": "comment",
+        "z": "ea3455aff8475092",
+        "name": "Função Definir",
+        "info": "",
+        "x": 420,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "0dc78bd12b2d6034",
+        "type": "inject",
+        "z": "ea3455aff8475092",
+        "name": "Entrada_Dados",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "db5345b614fe7c73"
+            ]
+        ]
+    },
+    {
+        "id": "67e75d06653669b1",
+        "type": "debug",
+        "z": "ea3455aff8475092",
+        "name": "Saida",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5b191fad42013cb9",
+        "type": "comment",
+        "z": "ea3455aff8475092",
+        "name": "Função Switch",
+        "info": "",
+        "x": 420,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "664c103d0a640b05",
+        "type": "inject",
+        "z": "ea3455aff8475092",
+        "name": "Entrada_1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Input_01",
+        "payloadType": "str",
+        "x": 120,
+        "y": 600,
+        "wires": [
+            [
+                "e281cdd2f383be66"
+            ]
+        ]
+    },
+    {
+        "id": "0067488058775783",
+        "type": "inject",
+        "z": "ea3455aff8475092",
+        "name": "Entrada_2",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Input_02",
+        "payloadType": "str",
+        "x": 120,
+        "y": 680,
+        "wires": [
+            [
+                "e281cdd2f383be66"
+            ]
+        ]
+    },
+    {
+        "id": "e281cdd2f383be66",
+        "type": "switch",
+        "z": "ea3455aff8475092",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Input_01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Input_02",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 640,
+        "wires": [
+            [
+                "96251eaec0084bb3"
+            ],
+            [
+                "cf1cbad5796d7da9"
+            ]
+        ]
+    },
+    {
+        "id": "96251eaec0084bb3",
+        "type": "debug",
+        "z": "ea3455aff8475092",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "cf1cbad5796d7da9",
+        "type": "debug",
+        "z": "ea3455aff8475092",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "74d181ab0be668ca",
+        "type": "comment",
+        "z": "ea3455aff8475092",
+        "name": "Operações Matemáticas",
+        "info": "",
+        "x": 450,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7a112773f85ff28b",
+        "type": "inject",
+        "z": "ea3455aff8475092",
+        "name": "input_numerico",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 140,
+        "y": 840,
+        "wires": [
+            [
+                "f95a5c26cc963133"
+            ]
+        ]
+    },
+    {
+        "id": "f95a5c26cc963133",
+        "type": "change",
+        "z": "ea3455aff8475092",
+        "name": "operacoes_matematicas",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload*2-1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 840,
+        "wires": [
+            [
+                "3386fc72726d6bd5"
+            ]
+        ]
+    },
+    {
+        "id": "3386fc72726d6bd5",
+        "type": "debug",
+        "z": "ea3455aff8475092",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 840,
+        "wires": []
+    }
+]
