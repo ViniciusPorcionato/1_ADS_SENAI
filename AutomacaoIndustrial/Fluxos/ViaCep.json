@@ -1,0 +1,99 @@
+[
+    {
+        "id": "b53b4d1c133bfb39",
+        "type": "tab",
+        "label": "Fluxo 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "335dc57b40e78e5d",
+        "type": "inject",
+        "z": "b53b4d1c133bfb39",
+        "name": "Obter_Dados",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "f9422d2c165eb42d"
+            ]
+        ]
+    },
+    {
+        "id": "f9422d2c165eb42d",
+        "type": "http request",
+        "z": "b53b4d1c133bfb39",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://viacep.com.br/ws/08320330/json/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "04cccb5bdfc95776"
+            ]
+        ]
+    },
+    {
+        "id": "04cccb5bdfc95776",
+        "type": "function",
+        "z": "b53b4d1c133bfb39",
+        "name": "captura_endereco",
+        "func": "var viacep = msg.payload;\nvar viacep_sjon = JSON.parse(viacep);\nmsg.payload = \" O endereço é: \" + viacep_sjon.logradouro + \", cidade: \" + viacep_sjon.localidade + \", bairro: \" + viacep_sjon.bairro + \", estado: \" + viacep_sjon.estado + \", UF: \" + viacep_sjon.uf + \".\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "1897f2fba6c41b5c"
+            ]
+        ]
+    },
+    {
+        "id": "1897f2fba6c41b5c",
+        "type": "debug",
+        "z": "b53b4d1c133bfb39",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    }
+]

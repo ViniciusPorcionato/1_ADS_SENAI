@@ -1,0 +1,75 @@
+[
+    {
+        "id": "35dacc78b6a069ae",
+        "type": "tab",
+        "label": "Fluxo 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "943aed55dfb24091",
+        "type": "inject",
+        "z": "35dacc78b6a069ae",
+        "name": "Entrada_Dados",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "3d3b4dc5b76edc4b"
+            ]
+        ]
+    },
+    {
+        "id": "3d3b4dc5b76edc4b",
+        "type": "function",
+        "z": "35dacc78b6a069ae",
+        "name": "Captura_Data_Hora",
+        "func": "var data = new Date();\nvar data_string = data.toLocaleTimeString();\nmsg.payload = msg.payload + ' A hora é: ' + data_string + '.';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "0ca73433bcdbfd0e"
+            ]
+        ]
+    },
+    {
+        "id": "0ca73433bcdbfd0e",
+        "type": "debug",
+        "z": "35dacc78b6a069ae",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 160,
+        "wires": []
+    }
+]
