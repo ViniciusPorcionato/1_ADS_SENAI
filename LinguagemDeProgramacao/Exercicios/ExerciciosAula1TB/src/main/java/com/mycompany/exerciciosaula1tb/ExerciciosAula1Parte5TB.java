@@ -16,9 +16,9 @@ public class ExerciciosAula1Parte5TB {
         System.out.println("Informe o raio da circunferência:");
         float raio = sc.nextFloat();
         
-        float pi = 3.14159f;
+        final double pi = 3.14159;
         
-        float areaCircunferencia = 2 * pi * raio;
+        double areaCircunferencia = 2 * pi * raio;
         
         System.out.println("Area da circunferência é igual há: " + areaCircunferencia);
         
