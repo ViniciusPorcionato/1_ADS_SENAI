@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.header{
+.header {
   width: 100%;
   height: 80px;
   background-color: #f6f6f6;
@@ -20,34 +20,89 @@
   height: 100%;
 }
 
-
-.content-header{
+.content-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo{
+.logo {
   width: 40px;
   height: 40px;
 }
 
-.navbar{
+.navbar {
   width: 18%;
   display: flex;
   justify-content: space-between;
 }
 
-.link{
+.link {
   text-decoration: none;
   font-size: 20px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #333333;
 }
 
-.link:hover{
+.link:hover {
   color: #AF0404;
   text-decoration: underline;
 }
 
+.section-banner {
+  width: 100%;
+}
 
+.banner {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sobre-nos {
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-sobre-nos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+
+}
+
+.sobre-nos-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain; 
+}
+
+.sobre-nos-text {
+  max-width: 500px;
+  padding: 30px;
+  border: 1px solid #AF0404;
+  border-radius: 15px;
+}
+
+.sobre-nos-text:hover {
+  box-shadow: 8px 8px 8px 8px #00000044;
+}
+
+.sobre-nos h3 {
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #333333;
+}
+
+
+.sobre-nos p {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #333333;
+  margin-top: 30px;
+}
