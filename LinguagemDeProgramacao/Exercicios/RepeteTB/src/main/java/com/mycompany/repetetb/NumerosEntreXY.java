@@ -2,10 +2,6 @@ package com.mycompany.repetetb;
 
 import java.util.Scanner;
 
-/**
- *
- * @author 25170641
- */
 public class NumerosEntreXY {
 
     public static void main(String[] args) {
