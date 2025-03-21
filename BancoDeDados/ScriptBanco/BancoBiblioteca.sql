@@ -107,7 +107,61 @@ update autor set cod_autor = 12 where nome_autor = "Álvares de Azevedo";
 
 alter table autor auto_increment = 12;
     
-select * from livro_autor;
-select * from autor;
-select * from livro;
+create table departamento(
+cod_depart int not null auto_increment primary key,
+nome_depart varchar(100) not null,
+descricao_atividade text not null,
+nome_gerente varchar(80)
+);
+
+create table funcionarios(
+cod_funcionario int not null auto_increment primary key,
+nome_funcionario varchar(100) not null,
+endereco varchar(100) not null,
+rg varchar(50) not null unique,
+cpf varchar(20) not null unique,
+formacao varchar(100) not null,
+salario float
+);
+
+create table func_dep(
+cod_func_dep int not null auto_increment primary key,
+cod_funcionario int not null,
+cod_depart int not null,
+descricao_atividade text,
+foreign key(cod_funcionario) references funcionarios(cod_funcionario),
+foreign key(cod_depart) references departamento(cod_depart)
+);
+
+INSERT INTO departamento (nome_depart, descricao_atividade, nome_gerente) VALUES
+('Recursos Humanos', 'Gerenciamento de pessoal', 'Ana Silva'),
+('TI', 'Desenvolvimento e manutenção de sistemas', 'Carlos Oliveira'),
+('Marketing', 'Promoção de eventos e divulgação', 'Fernanda Souza'),
+('Financeiro', 'Controle de orçamento e pagamentos', 'Ricardo Santos'),
+('Acervo', 'Catalogação e organização de livros', 'Mariana Costa'),
+('Eventos', 'Planejamento e execução de eventos culturais', 'Pedro Almeida'),
+('Manutenção', 'Manutenção predial e de equipamentos', 'Juliana Rodrigues');
+
+INSERT INTO funcionarios (nome_funcionario, endereco, rg, cpf, formacao, salario) VALUES
+('João Pereira', 'Rua A, 123', '123456789', '123.456.789-00', 'Administração', 3000.00),
+('Maria Souza', 'Avenida B, 456', '987654321', '987.654.321-00', 'Ciência da Computação', 4500.00),
+('José Santos', 'Rua C, 789', '112233445', '112.233.445-00', 'Marketing', 3500.00),
+('Ana Oliveira', 'Avenida D, 101', '554433221', '554.433.221-00', 'Finanças', 4000.00),
+('Carlos Rodrigues', 'Rua E, 202', '667788990', '667.788.990-00', 'Biblioteconomia', 2800.00),
+('Fernanda Almeida', 'Avenida F, 303', '009988776', '009.988.776-00', 'Eventos', 3200.00),
+('Ricardo Costa', 'Rua G, 404', '854796325', '222.233.555-00', 'Manutenção', 2500.00);
+
+INSERT INTO func_dep (cod_funcionario, cod_depart, descricao_atividade) VALUES
+(1, 1, 'Recrutamento e seleção'),
+(2, 2, 'Desenvolvimento de software'),
+(3, 3, 'Criação de campanhas publicitárias'),
+(4, 4, 'Análise de fluxo de caixa'),
+(5, 5, 'Catalogação de livros'),
+(6, 6, 'Organização de eventos'),
+(7, 7, 'Manutenção de computadores');
+
+select * from departamento;
+select * from funcionarios;
+select * from func_dep;
+
  
