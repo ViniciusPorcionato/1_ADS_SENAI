@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talisma Imóveis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #8B0000;
+            font-size: 1.5rem;
+        }
+
+        header nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            color: #8B0000;
+        }
+
+        /* Banner */
+        .banner {
+            background: url('https://via.placeholder.com/1200x400/8B0000/fff?text=Banner+Talisma+Imoveis') no-repeat center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .search-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-box .tabs {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid #8B0000;
+        }
+
+        .search-box .tabs span {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .search-box .tabs span.active {
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+        }
+
+        .search-box input {
+            padding: 0.5rem;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            background: #8B0000;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #a30000;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background: #f4f4f4;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .about:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Properties Section */
+        .properties-section h2 {
+            margin-bottom: 1rem;
+            color: #8B0000;
+        }
+
+        .filter {
+            margin-bottom: 1rem;
+        }
+
+        .filter select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .properties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .property-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .property-card:hover {
+            transform: scale(1.03);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-card .content {
+            padding: 1rem;
+        }
+
+        .property-card h3 {
+            color: #8B0000;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-card p {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-card .price {
+            color: #8B0000;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .property-card .details {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .banner {
+                height: 300px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Talisma Imóveis</h1>
+        <nav>
+            <a href="#">Lançamentos</a>
+            <a href="#">Prontos</a>
+            <a href="#">Aluguel</a>
+            <a href="#">Anuncie seu Imóvel</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="search-box">
+            <div class="tabs">
+                <span class="tab active" data-tab="buy">Comprar</span>
+                <span class="tab" data-tab="rent">Alugar</span>
+            </div>
+            <input type="text" placeholder="Busque pela região ou empreendimento">
+            <button>Buscar</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="about">
+            <h2>Sobre a Talisma Imóveis</h2>
+            <p>A Talisma Imóveis é sua parceira para encontrar o lar dos seus sonhos. Com mais de 10 anos de experiência, oferecemos as melhores opções de compra e aluguel com atendimento personalizado.</p>
+        </section>
+
+        <section class="properties-section">
+            <h2>Imóveis em Destaque</h2>
+            <div class="filter">
+                <select id="filter-type">
+                    <option value="all">Todos os Imóveis</option>
+                    <option value="sale">À Venda</option>
+                    <option value="rent">Para Alugar</option>
+                </select>
+            </div>
+            <div class="properties" id="properties">
+                <div class="property-card" data-type="sale">
+                    <img src="https://via.placeholder.com/300x200?text=Casa+Moderna" alt="Casa Moderna">
+                    <div class="content">
+                        <h3>Casa Moderna</h3>
+                        <p>Rua Santa Cruz, 2285, Ipiranga, São Paulo</p>
+                        <p class="price">R$ 450.000,00</p>
+                        <div class="details">
+                            <span>82 m²</span>
+                            <span>3 quartos</span>
+                            <span>2 banheiros</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card" data-type="rent">
+                    <img src="https://via.placeholder.com/300x200?text=Apartamento+Central" alt="Apartamento Central">
+                    <div class="content">
+                        <h3>Apartamento Central</h3>
+                        <p>Rua Manuel Leiroz, 425, Congonhas, São Paulo</p>
+                        <p class="price">R$ 1.800,00/mês</p>
+                        <div class="details">
+                            <span>27 m²</span>
+                            <span>2 quartos</span>
+                            <span>1 banheiro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card" data-type="sale">
+                    <img src="https://via.placeholder.com/300x200?text=Sobrado+Luxo" alt="Sobrado Luxo">
+                    <div class="content">
+                        <h3>Sobrado Luxo</h3>
+                        <p>Rua Monte Klesbio, 110, Chácara Klabin, São Paulo</p>
+                        <p class="price">R$ 780.000,00</p>
+                        <div class="details">
+                            <span>210 m²</span>
+                            <span>4 quartos</span>
+                            <span>3 banheiros</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card" data-type="rent">
+                    <img src="https://via.placeholder.com/300x200?text=Casa+Terrea" alt="Casa Térrea">
+                    <div class="content">
+                        <h3>Casa Térrea</h3>
+                        <p>Rua Mourato Coelho, 129, Pinheiros, São Paulo</p>
+                        <p class="price">R$ 1.200,00/mês</p>
+                        <div class="details">
+                            <span>192 m²</span>
+                            <span>2 quartos</span>
+                            <span>1 banheiro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Talisma Imóveis. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Filtro de Imóveis
+        const filter = document.getElementById('filter-type');
+        const properties = document.querySelectorAll('.property-card');
+
+        filter.addEventListener('change', function() {
+            const selectedType = this.value;
+
+            properties.forEach(property => {
+                const propertyType = property.getAttribute('data-type');
+                
+                if (selectedType === 'all' || selectedType === propertyType) {
+                    property.style.display = 'block';
+                    property.style.opacity = '0';
+                    setTimeout(() => {
+                        property.style.transition = 'opacity 0.5s';
+                        property.style.opacity = '1';
+                    }, 100);
+                } else {
+                    property.style.opacity = '0';
+                    setTimeout(() => {
+                        property.style.display = 'none';
+                    }, 500);
+                }
+            });
+        });
+
+        // Tabs de Comprar/Alugar
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
