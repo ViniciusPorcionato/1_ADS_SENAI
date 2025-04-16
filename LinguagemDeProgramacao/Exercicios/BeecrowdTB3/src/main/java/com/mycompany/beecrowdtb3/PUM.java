@@ -31,7 +31,7 @@ public class PUM {
             numero += 4;
             contador++; // Incrementa o contador de linhas
         }
-        
+                
         sc.close();
     }
 }
