@@ -1,0 +1,65 @@
+RELACIONAMENTOS
+
+Cliente × Imóvel (Propriedade)
+Um Cliente pode ser Proprietário de muitos Imóveis.
+Um Imóvel pertence a um Cliente (Proprietário).
+Relacionamento: 1:N (um para muitos).
+Implementação: Atributo id_proprietario (FK) na tabela Imóvel.
+
+===========================================================================
+
+Imóvel × Tipo de Imóvel
+Um Imóvel pertence a um Tipo de Imóvel.
+Um Tipo de Imóvel pode classificar muitos Imóveis.
+Relacionamento: 1:N.
+Implementação: Atributo id_tipo_imovel (FK) na tabela Imóvel.
+
+===========================================================================
+
+Imóvel × Venda
+Um Imóvel pode estar associado a uma Venda (se for vendido).
+Uma Venda refere-se a um Imóvel.
+Relacionamento: 1:1 (um para um).
+Implementação: Atributo id_imovel (FK) na tabela Venda.
+
+==========================================================================
+
+Cliente × Venda (Comprador)
+Um Cliente pode ser Comprador em muitas Vendas.
+Uma Venda tem um Comprador (Cliente).
+Relacionamento: 1:N.
+Implementação: Atributo id_comprador (FK) na tabela Venda.
+
+==========================================================================
+
+Corretor × Venda
+Um Corretor pode intermediar muitas Vendas.
+Uma Venda é intermediada por um Corretor.
+Relacionamento: 1:N.
+Implementação: Atributo id_corretor (FK) na tabela Venda.
+
+==========================================================================
+
+Imóvel × Locação
+Um Imóvel pode estar associado a uma Locação (se for alugado).
+Uma Locação refere-se a um Imóvel.
+Relacionamento: 1:1 (considerando que um imóvel só tem uma locação ativa por vez).
+Implementação: Atributo id_imovel (FK) na tabela Locação.
+
+==========================================================================
+
+Cliente × Locação (Locatário)
+Um Cliente pode ser Locatário em muitas Locações.
+Uma Locação tem um Locatário (Cliente).
+Relacionamento: 1:N.
+Implementação: Atributo id_locatario (FK) na tabela Locação.
+
+===========================================================================
+
+Corretor × Locação
+Um Corretor pode intermediar muitas Locações.
+Uma Locação é intermediada por um Corretor.
+Relacionamento: 1:N.
+Implementação: Atributo id_corretor (FK) na tabela Locação.
+
+===========================================================================
