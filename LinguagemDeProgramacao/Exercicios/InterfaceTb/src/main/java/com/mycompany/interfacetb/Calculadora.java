@@ -225,9 +225,9 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_multActionPerformed
 
     private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
-        int n1 = Integer.parseInt(num1.getText());
-        int n2 = Integer.parseInt(num2.getText());
-        int result = n1 / n2;
+        double n1 = Double.parseDouble(num1.getText());
+        double n2 = Double.parseDouble(num2.getText());
+        double result = n1 / n2;
         resultado.setText(String.valueOf(result));
     }//GEN-LAST:event_divActionPerformed
 
