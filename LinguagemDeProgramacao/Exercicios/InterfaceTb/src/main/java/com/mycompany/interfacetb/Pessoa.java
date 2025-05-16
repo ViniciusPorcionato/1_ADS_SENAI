@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.interfacetb;
 
 
 public class Pessoa {
-    private String nome, idade, sexo, profissao, receberEmail;
+    private String nome, idade, sexo, profissao, receberEmail, news;
 
     public String getNome() {
         return nome;
@@ -48,14 +45,24 @@ public class Pessoa {
         this.receberEmail = receberEmail;
     }
 
-    public String status() {
-        return "nome: " + this.nome + 
-                "\nIdade: " + idade + 
-                "\nProfissao: " + profissao ;
+    public String getNews() {
+        return news;
     }
-    
-    
-    
-    
+
+    public void setNews(String news) {
+        this.news = news;
+    }
+
+    public String status() {
+        return  "----Dados do cadastro:----" +
+                "\nnome: " + this.nome + 
+                "\nIdade: " + this.idade + 
+                "\nSexo: " + this.sexo +
+                "\nProfissao: " + this.profissao +
+                "\nReceber Email: " + this.receberEmail + 
+                "\n Cadstrar newsletter: " + this.news +
+                "\n";
+        
+    }
     
 }
