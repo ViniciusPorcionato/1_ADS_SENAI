@@ -1,0 +1,510 @@
+[
+    {
+        "id": "f4c68dd139b90406",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "456bbe81bd3f1165",
+        "type": "function",
+        "z": "f4c68dd139b90406",
+        "name": "Montar SQL",
+        "func": "msg.topic = \"SELECT * FROM Cliente\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "fbf7ef68a045067e"
+            ]
+        ]
+    },
+    {
+        "id": "fbf7ef68a045067e",
+        "type": "mysql",
+        "z": "f4c68dd139b90406",
+        "mydb": "d53a8a5c180463df",
+        "name": "Banco de Dados",
+        "x": 530,
+        "y": 80,
+        "wires": [
+            [
+                "031e98b5b98dc67b",
+                "10ab8d68f081c1f5"
+            ]
+        ]
+    },
+    {
+        "id": "10ab8d68f081c1f5",
+        "type": "debug",
+        "z": "f4c68dd139b90406",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "031e98b5b98dc67b",
+        "type": "function",
+        "z": "f4c68dd139b90406",
+        "name": "Formatar HTML",
+        "func": "let dados = msg.payload;\nlet html = `\n<table>\n    <tr>\n        <th>Id</th>\n        <th>Nome</th>\n        <th>CPF</th>\n        <th>Telefone</th>\n        <th>Email</th>\n    </tr>`;\nfor (let linha of dados){\n    html += `\n    <tr>\n        <td>${linha.id_cliente}</td>\n        <td>${linha.nome}</td>\n        <td>${linha.cpf}</td>\n        <td>${linha.telefone}</td>\n        <td>${linha.email}</td>\n    </tr>`;\n}\nhtml += '</table>';\nmsg.payload = html;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "e1e99778d8b49996"
+            ]
+        ]
+    },
+    {
+        "id": "91383409cac65e5a",
+        "type": "ui_button",
+        "z": "f4c68dd139b90406",
+        "name": "",
+        "group": "d108471cfcb3d0f2",
+        "order": 2,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "Leitura de Dados",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "456bbe81bd3f1165"
+            ]
+        ]
+    },
+    {
+        "id": "e1e99778d8b49996",
+        "type": "ui_template",
+        "z": "f4c68dd139b90406",
+        "group": "d108471cfcb3d0f2",
+        "name": "",
+        "order": 1,
+        "width": 10,
+        "height": 9,
+        "format": "<style>\n    table{\n        width: 100%;\n        border-collapse: collapse;\n        font-family: Arial;\n        font-size: 14px;\n    }\n    th,\n    td {\n        padding: 10px;\n        border: 1px solid #ccc;\n        text-align: center;\n        vertical-align: middle;\n    }\n    th {\n        background-color: #8B0000;\n        color: white;\n    }\n</style>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 740,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b51537f624ab6b5",
+        "type": "ui_form",
+        "z": "f4c68dd139b90406",
+        "name": "",
+        "label": "Cadastro Cliente",
+        "group": "3f60b36e29acd5a4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Nome",
+                "value": "nome",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "CPF",
+                "value": "cpf",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Telefone",
+                "value": "telefone",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Email",
+                "value": "email",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "nome": "",
+            "cpf": "",
+            "telefone": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "Cadastrar",
+        "cancel": "Cancelar",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "7367e9918d2103a1"
+            ]
+        ]
+    },
+    {
+        "id": "7367e9918d2103a1",
+        "type": "function",
+        "z": "f4c68dd139b90406",
+        "name": "function 1",
+        "func": "msg.topic = \"INSERT INTO Cliente (nome, cpf, telefone, email) VALUES (?, ?, ?, ?)\";\nmsg.payload = [msg.payload.nome, msg.payload.cpf, msg.payload.telefone, msg.payload.email];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "3be3d8df0fc0ab57"
+            ]
+        ]
+    },
+    {
+        "id": "3be3d8df0fc0ab57",
+        "type": "mysql",
+        "z": "f4c68dd139b90406",
+        "mydb": "d53a8a5c180463df",
+        "name": "Banco de Dados",
+        "x": 530,
+        "y": 240,
+        "wires": [
+            [
+                "ed8ebeab59ac12cf"
+            ]
+        ]
+    },
+    {
+        "id": "ed8ebeab59ac12cf",
+        "type": "debug",
+        "z": "f4c68dd139b90406",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "224f6547dcb89c31",
+        "type": "ui_form",
+        "z": "f4c68dd139b90406",
+        "name": "",
+        "label": "Deletar Cliente",
+        "group": "9045266b4c51c722",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Id Cliente",
+                "value": "id_cliente",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id_cliente": ""
+        },
+        "payload": "",
+        "submit": "Deletar",
+        "cancel": "Cancelar",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "40554eb055f921bb"
+            ]
+        ]
+    },
+    {
+        "id": "40554eb055f921bb",
+        "type": "function",
+        "z": "f4c68dd139b90406",
+        "name": "function 2",
+        "func": "msg.topic = \"DELETE FROM Cliente WHERE id_cliente = ?\";\nmsg.payload = [msg.payload.id_cliente];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "930e607b523e0f2b"
+            ]
+        ]
+    },
+    {
+        "id": "930e607b523e0f2b",
+        "type": "mysql",
+        "z": "f4c68dd139b90406",
+        "mydb": "d53a8a5c180463df",
+        "name": "Banco de Dados",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "56786b28d0b7399d"
+            ]
+        ]
+    },
+    {
+        "id": "56786b28d0b7399d",
+        "type": "debug",
+        "z": "f4c68dd139b90406",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3b00e60b17fb6513",
+        "type": "ui_form",
+        "z": "f4c68dd139b90406",
+        "name": "",
+        "label": "Alterar Cliente",
+        "group": "36cba1d60a2acc64",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Id Cliente",
+                "value": "id_cliente",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Nome",
+                "value": "nome",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "CPF",
+                "value": "cpf",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Telefone",
+                "value": "telefone",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Email",
+                "value": "email",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id_cliente": "",
+            "nome": "",
+            "cpf": "",
+            "telefone": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "Alterar",
+        "cancel": "Cancelar",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "38da9ab17959f5ce"
+            ]
+        ]
+    },
+    {
+        "id": "38da9ab17959f5ce",
+        "type": "function",
+        "z": "f4c68dd139b90406",
+        "name": "function 3",
+        "func": "msg.topic = \"UPDATE Cliente SET nome = ?, cpf = ?, telefone = ?, email = ? WHERE id_cliente = ?\";\nmsg.payload = [\n    msg.payload.nome,\n    msg.payload.cpf,\n    msg.payload.telefone,\n    msg.payload.email,\n    msg.payload.id_cliente\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "f4b7dca0563f7db1"
+            ]
+        ]
+    },
+    {
+        "id": "f4b7dca0563f7db1",
+        "type": "mysql",
+        "z": "f4c68dd139b90406",
+        "mydb": "d53a8a5c180463df",
+        "name": "Banco de Dados",
+        "x": 530,
+        "y": 400,
+        "wires": [
+            [
+                "54654aefa677a1ae"
+            ]
+        ]
+    },
+    {
+        "id": "54654aefa677a1ae",
+        "type": "debug",
+        "z": "f4c68dd139b90406",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d53a8a5c180463df",
+        "type": "MySQLdatabase",
+        "name": "MySQL_Imobiliaria",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "Imobiliaria",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d108471cfcb3d0f2",
+        "type": "ui_group",
+        "name": "Vizualizar Dados",
+        "tab": "c8cbc0c1588586fb",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3f60b36e29acd5a4",
+        "type": "ui_group",
+        "name": "Cadastrar Cliente",
+        "tab": "c8cbc0c1588586fb",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9045266b4c51c722",
+        "type": "ui_group",
+        "name": "Deletar Cliente",
+        "tab": "c8cbc0c1588586fb",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "36cba1d60a2acc64",
+        "type": "ui_group",
+        "name": "Alterar Cliente",
+        "tab": "c8cbc0c1588586fb",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c8cbc0c1588586fb",
+        "type": "ui_tab",
+        "name": "Projeto Imobiliaria",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
