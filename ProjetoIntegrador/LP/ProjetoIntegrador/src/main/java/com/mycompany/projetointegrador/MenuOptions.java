@@ -183,31 +183,38 @@ public class MenuOptions extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastroCorretorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroCorretorActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroCorretor().setVisible(true);
     }//GEN-LAST:event_btn_cadastroCorretorActionPerformed
 
     private void btn_cadastroTipoImovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroTipoImovelActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroTipoImoveis().setVisible(true);
     }//GEN-LAST:event_btn_cadastroTipoImovelActionPerformed
 
     private void btn_cadastroProrietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroProrietarioActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroProprietario().setVisible(true);
     }//GEN-LAST:event_btn_cadastroProrietarioActionPerformed
 
     private void btn_cadastroImoveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroImoveisActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroImovel().setVisible(true);
     }//GEN-LAST:event_btn_cadastroImoveisActionPerformed
 
     private void btn_cadastroLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroLocacaoActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroLocacao().setVisible(true);
     }//GEN-LAST:event_btn_cadastroLocacaoActionPerformed
 
     private void btn_cadastroVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroVendaActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroVenda().setVisible(true);
     }//GEN-LAST:event_btn_cadastroVendaActionPerformed
 
     private void btn_cadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastroClienteActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new CadastroCliente().setVisible(true);
     }//GEN-LAST:event_btn_cadastroClienteActionPerformed
 
     public static void main(String args[]) {
