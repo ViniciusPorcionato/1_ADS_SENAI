@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talismã Imoveis</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="content-header">
+        <img
+          class="logo-image"
+          src="./assets/images/Logo-Red.svg"
+          alt="Logo da imobiliária"
+        />
+        <nav class="navbar">
+          <a class="link" href="">Início</a>
+          <a class="link" href="">Sobre nós</a>
+          <a class="link" href="">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sessão de pesquisa de imoveis -->
+      <section class="section-search">
+        <img
+          class="image-banner"
+          src="./assets/images/image-banner.svg"
+          alt="Mulher com celular"
+        />
+        <div class="banner-container">
+          <div class="search-box">
+            <h2>O imóvel que você procura está aqui!</h2>
+
+            <div class="tab-options">
+              <button class="tab-button active">COMPRAR</button>
+              <button class="tab-button">ALUGAR</button>
+            </div>
+
+            <hr class="tab-divider" />
+
+            <form class="search-form">
+              <div class="form-group">
+                <label for="tipo-imovel">Tipo de Imóvel</label>
+                <select id="tipo-imovel" name="tipo-imovel">
+                  <option value="">Selecione</option>
+                  <option value="casa">Casa</option>
+                  <option value="apartamento">Apartamento</option>
+                  <option value="terreno">Terreno</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="localizacao">Onde Deseja Morar?</label>
+                <select id="localizacao" name="localizacao">
+                  <option value="">Selecione</option>
+                  <option value="sp">São Paulo</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <option value="bh">Belo Horizonte</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-buscar">BUSCAR</button>
+            </form>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="./js/scripts.js"></script>
+
+
+  </body>
+</html>

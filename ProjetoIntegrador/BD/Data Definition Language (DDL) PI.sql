@@ -7,7 +7,9 @@ CREATE TABLE clientes (
     nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     telefone VARCHAR(20) NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    genero VARCHAR(20) NOT NULL
 );
 
 -- Tabela corretores
@@ -16,7 +18,9 @@ CREATE TABLE corretores (
     nome VARCHAR(100) NOT NULL,
     creci VARCHAR(20) UNIQUE NOT NULL,
     telefone VARCHAR(20) NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
+    data_admissao DATE NOT NULL,
+    especialidade VARCHAR(100)
 );
 
 -- Tabela tipoImoveis
@@ -31,7 +35,9 @@ CREATE TABLE proprietarios(
 	nome VARCHAR(255) NOT NULL,
 	cpf VARCHAR(14) UNIQUE NOT NULL,
 	telefone VARCHAR(20) NOT NULL,
-	email VARCHAR(100) NOT NULL
+	email VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    genero VARCHAR(20) NOT NULL
 );
 
 -- Tabela imoveis
