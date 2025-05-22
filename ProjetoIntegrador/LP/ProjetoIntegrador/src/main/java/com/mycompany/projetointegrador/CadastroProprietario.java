@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -100,10 +102,33 @@ public class CadastroProprietario extends javax.swing.JFrame {
         btn_cadastrarCliente.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarCliente.setText("CADASTRAR");
+        btn_cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarClienteActionPerformed(evt);
+            }
+        });
 
         input_dataNascimento.setBackground(new java.awt.Color(204, 204, 204));
+        input_dataNascimento.setText("Digite sua data de nascimento aqui...");
+        input_dataNascimento.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_dataNascimentoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_dataNascimentoFocusLost(evt);
+            }
+        });
 
         input_nome.setBackground(new java.awt.Color(204, 204, 204));
+        input_nome.setText("Digite seu nome aqui...");
+        input_nome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_nomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_nomeFocusLost(evt);
+            }
+        });
         input_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_nomeActionPerformed(evt);
@@ -111,8 +136,26 @@ public class CadastroProprietario extends javax.swing.JFrame {
         });
 
         input_cpf.setBackground(new java.awt.Color(204, 204, 204));
+        input_cpf.setText("Digite seu CPF aqui...");
+        input_cpf.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_cpfFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_cpfFocusLost(evt);
+            }
+        });
 
         input_telefone.setBackground(new java.awt.Color(204, 204, 204));
+        input_telefone.setText("Digite seu telefone aqui...");
+        input_telefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_telefoneFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_telefoneFocusLost(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
@@ -123,10 +166,24 @@ public class CadastroProprietario extends javax.swing.JFrame {
         jLabel9.setText("Gênero:");
 
         input_email.setBackground(new java.awt.Color(204, 204, 204));
+        input_email.setText("Digite seu email aqui...");
+        input_email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_emailFocusLost(evt);
+            }
+        });
 
         btn_feminino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_feminino.setForeground(new java.awt.Color(153, 0, 0));
         btn_feminino.setText("Feminino");
+        btn_feminino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_femininoActionPerformed(evt);
+            }
+        });
 
         btn_masculino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_masculino.setForeground(new java.awt.Color(153, 0, 0));
@@ -319,6 +376,14 @@ public class CadastroProprietario extends javax.swing.JFrame {
 
     private void btn_limparCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparCampoActionPerformed
         // TODO add your handling code here:
+        input_nome.setText("");
+        input_cpf.setText("");
+        input_telefone.setText("");
+        input_email.setText("");
+        input_dataNascimento.setText("");
+        btn_masculino.setSelected(false);
+        btn_feminino.setSelected(false);
+        btn_outro.setSelected(false);
     }//GEN-LAST:event_btn_limparCampoActionPerformed
 
     private void input_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nomeActionPerformed
@@ -327,16 +392,119 @@ public class CadastroProprietario extends javax.swing.JFrame {
 
     private void btn_masculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masculinoActionPerformed
         // TODO add your handling code here:
+        btn_feminino.setSelected(false);
+        btn_outro.setSelected(false);
     }//GEN-LAST:event_btn_masculinoActionPerformed
 
     private void btn_outroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_outroActionPerformed
         // TODO add your handling code here:
+        btn_feminino.setSelected(false);
+        btn_masculino.setSelected(false);
     }//GEN-LAST:event_btn_outroActionPerformed
 
     private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_nomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_nomeFocusGained
+        // TODO add your handling code here:
+         if (input_nome.getText().equals("Digite seu nome aqui...")) {
+            input_nome.setText("");
+        }
+    }//GEN-LAST:event_input_nomeFocusGained
+
+    private void input_nomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_nomeFocusLost
+        // TODO add your handling code here:
+        if (input_nome.getText().equals("")) {
+            input_nome.setText("Digite seu nome aqui...");
+        }
+    }//GEN-LAST:event_input_nomeFocusLost
+
+    private void input_cpfFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cpfFocusGained
+        // TODO add your handling code here:
+        if (input_cpf.getText().equals("Digite seu CPF aqui...")) {
+            input_cpf.setText("");
+        }
+    }//GEN-LAST:event_input_cpfFocusGained
+
+    private void input_cpfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cpfFocusLost
+        // TODO add your handling code here:
+        if (input_cpf.getText().equals("")) {
+            input_cpf.setText("Digite seu CPF aqui...");
+        }
+    }//GEN-LAST:event_input_cpfFocusLost
+
+    private void input_telefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_telefoneFocusGained
+        // TODO add your handling code here:
+        if (input_telefone.getText().equals("Digite seu telefone aqui...")) {
+            input_telefone.setText("");
+        }
+    }//GEN-LAST:event_input_telefoneFocusGained
+
+    private void input_telefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_telefoneFocusLost
+        // TODO add your handling code here:
+        if (input_telefone.getText().equals("")) {
+            input_telefone.setText("Digite seu telefone aqui...");
+        }
+    }//GEN-LAST:event_input_telefoneFocusLost
+
+    private void input_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_emailFocusGained
+        // TODO add your handling code here:
+        if (input_email.getText().equals("Digite seu email aqui...")) {
+            input_email.setText("");
+        }
+    }//GEN-LAST:event_input_emailFocusGained
+
+    private void input_emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_emailFocusLost
+        // TODO add your handling code here:
+        if (input_email.getText().equals("")) {
+            input_email.setText("Digite seu email aqui...");
+        }
+    }//GEN-LAST:event_input_emailFocusLost
+
+    private void input_dataNascimentoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataNascimentoFocusGained
+        // TODO add your handling code here:
+        if (input_dataNascimento.getText().equals("Digite sua data de nascimento aqui...")) {
+            input_dataNascimento.setText("");
+        }
+    }//GEN-LAST:event_input_dataNascimentoFocusGained
+
+    private void input_dataNascimentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataNascimentoFocusLost
+        // TODO add your handling code here:
+        if (input_dataNascimento.getText().equals("")) {
+            input_dataNascimento.setText("Digite sua data de nascimento aqui...");
+        }
+    }//GEN-LAST:event_input_dataNascimentoFocusLost
+
+    private void btn_femininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_femininoActionPerformed
+        // TODO add your handling code here:
+        btn_masculino.setSelected(false);
+        btn_outro.setSelected(false);
+    }//GEN-LAST:event_btn_femininoActionPerformed
+
+    private void btn_cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarClienteActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            Proprietario p = new Proprietario();
+            p.setNome(input_nome.getText());
+            p.setCpf(input_cpf.getText());
+            p.setTelefone(input_telefone.getText());
+            p.setEmail(input_email.getText());
+            p.setDataNascimento(input_dataNascimento.getText());
+            if (btn_feminino.isSelected()) {
+                p.setGenero("Feminino");
+            }else if (btn_masculino.isSelected()){
+                p.setGenero("Masculino");
+            }else{
+                p.setGenero("Outro");
+            }
+            
+            area.setText(p.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarClienteActionPerformed
 
     /**
      * @param args the command line arguments

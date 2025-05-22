@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -33,15 +35,15 @@ public class CadastroVenda extends javax.swing.JFrame {
         btn_menu = new javax.swing.JButton();
         btn_limparCampo = new javax.swing.JButton();
         btn_cadastrarCliente = new javax.swing.JButton();
-        input_nome = new javax.swing.JTextField();
+        input_dataVenda = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        input_nome2 = new javax.swing.JTextField();
+        input_valorVenda = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        select_imovel = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        select_comprador = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        select_corretor = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -84,11 +86,25 @@ public class CadastroVenda extends javax.swing.JFrame {
         btn_cadastrarCliente.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarCliente.setText("CADASTRAR");
-
-        input_nome.setBackground(new java.awt.Color(204, 204, 204));
-        input_nome.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nomeActionPerformed(evt);
+                btn_cadastrarClienteActionPerformed(evt);
+            }
+        });
+
+        input_dataVenda.setBackground(new java.awt.Color(204, 204, 204));
+        input_dataVenda.setText("Digite a data da venda aqui...");
+        input_dataVenda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_dataVendaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_dataVendaFocusLost(evt);
+            }
+        });
+        input_dataVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                input_dataVendaActionPerformed(evt);
             }
         });
 
@@ -96,10 +112,19 @@ public class CadastroVenda extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("Valor Venda:");
 
-        input_nome2.setBackground(new java.awt.Color(204, 204, 204));
-        input_nome2.addActionListener(new java.awt.event.ActionListener() {
+        input_valorVenda.setBackground(new java.awt.Color(204, 204, 204));
+        input_valorVenda.setText("Digite o valor da venda aqui...");
+        input_valorVenda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_valorVendaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_valorVendaFocusLost(evt);
+            }
+        });
+        input_valorVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nome2ActionPerformed(evt);
+                input_valorVendaActionPerformed(evt);
             }
         });
 
@@ -107,28 +132,33 @@ public class CadastroVenda extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Imovél: ");
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_imovel.setBackground(new java.awt.Color(204, 204, 204));
+        select_imovel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_imovel.setForeground(new java.awt.Color(153, 0, 0));
+        select_imovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Imovel 1", "Imovel 2", "Imovel 3", "Imovel 4", "Imovel 5", "Imovel 6", "Imovel 7", "Imovel 8", "Imovel 9", "Imovel 10" }));
+        select_imovel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_imovelActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel7.setText("Locatário:");
+        jLabel7.setText("Comprador:");
 
-        jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_comprador.setBackground(new java.awt.Color(204, 204, 204));
+        select_comprador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_comprador.setForeground(new java.awt.Color(153, 0, 0));
+        select_comprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ana Paula Souza", "Carlos Eduardo Lima", "Juliana Mendes", "Bruno Rocha", "Mariana Ferreira", "Lucas Martins", "Fernanda Dias", "Rodrigo Alves", "Patrícia Gomes", "Thiago Santana" }));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 0, 0));
         jLabel9.setText("Corretor:");
 
-        jComboBox3.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_corretor.setBackground(new java.awt.Color(204, 204, 204));
+        select_corretor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_corretor.setForeground(new java.awt.Color(153, 0, 0));
+        select_corretor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "João Oliveira", "Renata Lima", "Felipe Silva", "Luciana Mendes", "Gabriel Costa", "Isabela Moreira", "Roberto Souza", "Camila Ribeiro", "Daniel Freitas", "Elaine Martins" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -151,26 +181,26 @@ public class CadastroVenda extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(input_dataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_nome2))
+                                .addComponent(input_valorVenda))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(select_comprador, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(select_imovel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(select_corretor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(2, 2, 2)))
                         .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -185,23 +215,23 @@ public class CadastroVenda extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(input_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(input_dataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(input_nome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(input_valorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_imovel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_comprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_corretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_limparCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,20 +321,74 @@ public class CadastroVenda extends javax.swing.JFrame {
 
     private void btn_limparCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparCampoActionPerformed
         // TODO add your handling code here:
+        input_dataVenda.setText("");
+        input_valorVenda.setText("");
+        select_imovel.setSelectedIndex(0);
+        select_comprador.setSelectedIndex(0);
+        select_corretor.setSelectedIndex(0);
     }//GEN-LAST:event_btn_limparCampoActionPerformed
 
-    private void input_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nomeActionPerformed
+    private void input_dataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_dataVendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nomeActionPerformed
+    }//GEN-LAST:event_input_dataVendaActionPerformed
 
-    private void input_nome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nome2ActionPerformed
+    private void input_valorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_valorVendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nome2ActionPerformed
+    }//GEN-LAST:event_input_valorVendaActionPerformed
 
     private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_dataVendaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataVendaFocusGained
+        // TODO add your handling code here:
+        if (input_dataVenda.getText().equals("Digite a data da venda aqui...")) {
+            input_dataVenda.setText("");
+        }
+    }//GEN-LAST:event_input_dataVendaFocusGained
+
+    private void input_dataVendaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataVendaFocusLost
+        // TODO add your handling code here:
+        if (input_dataVenda.getText().equals("")) {
+            input_dataVenda.setText("Digite a data da venda aqui...");
+        }
+    }//GEN-LAST:event_input_dataVendaFocusLost
+
+    private void input_valorVendaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorVendaFocusGained
+        // TODO add your handling code here:
+        if (input_valorVenda.getText().equals("Digite o valor da venda aqui...")) {
+            input_valorVenda.setText("");
+        }
+    }//GEN-LAST:event_input_valorVendaFocusGained
+
+    private void input_valorVendaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorVendaFocusLost
+        // TODO add your handling code here:
+         if (input_valorVenda.getText().equals("")) {
+            input_valorVenda.setText("Digite o valor da venda aqui...");
+        }
+    }//GEN-LAST:event_input_valorVendaFocusLost
+
+    private void btn_cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarClienteActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar Imovel ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            Venda v = new Venda();
+            v.setData(input_dataVenda.getText());
+            v.setValor(input_valorVenda.getText());
+            v.setImovel((String) select_imovel.getSelectedItem());
+            v.setComprador((String) select_comprador.getSelectedItem());
+            v.setCorretor((String) select_corretor.getSelectedItem());
+            
+            area.setText(v.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarClienteActionPerformed
+
+    private void select_imovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_imovelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select_imovelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,11 +431,8 @@ public class CadastroVenda extends javax.swing.JFrame {
     private javax.swing.JButton btn_cadastrarCliente;
     private javax.swing.JButton btn_limparCampo;
     private javax.swing.JButton btn_menu;
-    private javax.swing.JTextField input_nome;
-    private javax.swing.JTextField input_nome2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JTextField input_dataVenda;
+    private javax.swing.JTextField input_valorVenda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -364,5 +445,8 @@ public class CadastroVenda extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox<String> select_comprador;
+    private javax.swing.JComboBox<String> select_corretor;
+    private javax.swing.JComboBox<String> select_imovel;
     // End of variables declaration//GEN-END:variables
 }

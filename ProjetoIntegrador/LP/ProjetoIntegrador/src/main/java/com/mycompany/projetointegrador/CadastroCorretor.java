@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -98,10 +100,33 @@ public class CadastroCorretor extends javax.swing.JFrame {
         btn_cadastrarCorretor.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCorretor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarCorretor.setText("CADASTRAR");
+        btn_cadastrarCorretor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarCorretorActionPerformed(evt);
+            }
+        });
 
         input_email.setBackground(new java.awt.Color(204, 204, 204));
+        input_email.setText("Digite seu email aqui...");
+        input_email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_emailFocusLost(evt);
+            }
+        });
 
         input_nome.setBackground(new java.awt.Color(204, 204, 204));
+        input_nome.setText("Digite seu nome aqui...");
+        input_nome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_nomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_nomeFocusLost(evt);
+            }
+        });
         input_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_nomeActionPerformed(evt);
@@ -109,20 +134,56 @@ public class CadastroCorretor extends javax.swing.JFrame {
         });
 
         input_creci.setBackground(new java.awt.Color(204, 204, 204));
+        input_creci.setText("Digite seu creci aqui...");
+        input_creci.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_creciFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_creciFocusLost(evt);
+            }
+        });
 
         input_telefone.setBackground(new java.awt.Color(204, 204, 204));
+        input_telefone.setText("Digite seu telefone aqui...");
+        input_telefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_telefoneFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_telefoneFocusLost(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
         jLabel7.setText("Especialidade:");
 
         input_especialidade.setBackground(new java.awt.Color(204, 204, 204));
+        input_especialidade.setText("Digite sua especialidade aqui...");
+        input_especialidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_especialidadeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_especialidadeFocusLost(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 0, 0));
         jLabel8.setText("Data Admissão:");
 
         input_dataAdmissao.setBackground(new java.awt.Color(204, 204, 204));
+        input_dataAdmissao.setText("Digite sua data de admissao aqui...");
+        input_dataAdmissao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_dataAdmissaoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_dataAdmissaoFocusLost(evt);
+            }
+        });
         input_dataAdmissao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_dataAdmissaoActionPerformed(evt);
@@ -310,6 +371,12 @@ public class CadastroCorretor extends javax.swing.JFrame {
 
     private void btn_limparCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparCampoActionPerformed
         // TODO add your handling code here:
+        input_nome.setText("");
+        input_creci.setText("");
+        input_telefone.setText("");
+        input_email.setText("");
+        input_dataAdmissao.setText("");
+        input_especialidade.setText("");
     }//GEN-LAST:event_btn_limparCampoActionPerformed
 
     private void input_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nomeActionPerformed
@@ -324,6 +391,107 @@ public class CadastroCorretor extends javax.swing.JFrame {
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_nomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_nomeFocusGained
+        // TODO add your handling code here:
+        if (input_nome.getText().equals("Digite seu nome aqui...")) {
+            input_nome.setText("");
+        }
+    }//GEN-LAST:event_input_nomeFocusGained
+
+    private void input_nomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_nomeFocusLost
+        // TODO add your handling code here:
+        if (input_nome.getText().equals("")) {
+            input_nome.setText("Digite seu nome aqui...");
+        }
+    }//GEN-LAST:event_input_nomeFocusLost
+
+    private void input_creciFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_creciFocusGained
+        // TODO add your handling code here:
+        if (input_creci.getText().equals("Digite seu creci aqui...")) {
+            input_creci.setText("");
+        }
+    }//GEN-LAST:event_input_creciFocusGained
+
+    private void input_creciFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_creciFocusLost
+        // TODO add your handling code here:
+        if (input_creci.getText().equals("")) {
+            input_creci.setText("Digite seu creci aqui...");
+        }
+    }//GEN-LAST:event_input_creciFocusLost
+
+    private void input_telefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_telefoneFocusGained
+        // TODO add your handling code here:
+        if (input_telefone.getText().equals("Digite seu telefone aqui...")) {
+            input_telefone.setText("");
+        }
+    }//GEN-LAST:event_input_telefoneFocusGained
+
+    private void input_telefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_telefoneFocusLost
+        // TODO add your handling code here:
+        if (input_telefone.getText().equals("")) {
+            input_telefone.setText("Digite seu telefone aqui...");
+        }
+    }//GEN-LAST:event_input_telefoneFocusLost
+
+    private void input_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_emailFocusGained
+        // TODO add your handling code here:
+        if (input_email.getText().equals("Digite seu email aqui...")) {
+            input_email.setText("");
+        }
+    }//GEN-LAST:event_input_emailFocusGained
+
+    private void input_emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_emailFocusLost
+        // TODO add your handling code here:
+        if (input_email.getText().equals("")) {
+            input_email.setText("Digite seu email aqui...");
+        }
+    }//GEN-LAST:event_input_emailFocusLost
+
+    private void input_dataAdmissaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataAdmissaoFocusGained
+        // TODO add your handling code here:
+        if (input_dataAdmissao.getText().equals("Digite sua data de admissao aqui...")) {
+            input_dataAdmissao.setText("");
+        }
+    }//GEN-LAST:event_input_dataAdmissaoFocusGained
+
+    private void input_dataAdmissaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataAdmissaoFocusLost
+        // TODO add your handling code here:
+        if (input_dataAdmissao.getText().equals("")) {
+            input_dataAdmissao.setText("Digite sua data de admissao aqui...");
+        }
+    }//GEN-LAST:event_input_dataAdmissaoFocusLost
+
+    private void input_especialidadeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_especialidadeFocusGained
+        // TODO add your handling code here:
+        if (input_especialidade.getText().equals("Digite sua especialidade aqui...")) {
+            input_especialidade.setText("");
+        }
+    }//GEN-LAST:event_input_especialidadeFocusGained
+
+    private void input_especialidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_especialidadeFocusLost
+        // TODO add your handling code here:
+        if (input_especialidade.getText().equals("")) {
+            input_especialidade.setText("Digite sua especialidade aqui...");
+        }
+    }//GEN-LAST:event_input_especialidadeFocusLost
+
+    private void btn_cadastrarCorretorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarCorretorActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            Corretor c = new Corretor();
+            c.setNome(input_nome.getText());
+            c.setCreci(input_creci.getText());
+            c.setTelefone(input_telefone.getText());
+            c.setEmail(input_email.getText());
+            c.setDataAdmissao(input_dataAdmissao.getText());
+            c.setEspecialidade(input_especialidade.getText());
+            
+            area.setText(c.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarCorretorActionPerformed
 
     /**
      * @param args the command line arguments

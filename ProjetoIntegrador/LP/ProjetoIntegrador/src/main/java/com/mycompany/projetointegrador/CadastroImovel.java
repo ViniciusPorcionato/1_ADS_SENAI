@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -86,6 +88,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         });
 
         input_endereco.setBackground(new java.awt.Color(204, 204, 204));
+        input_endereco.setText("Digite seu endereco aqui...");
+        input_endereco.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_enderecoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_enderecoFocusLost(evt);
+            }
+        });
         input_endereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_enderecoActionPerformed(evt);
@@ -97,6 +108,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel3.setText("Cidade :");
 
         input_cidade.setBackground(new java.awt.Color(204, 204, 204));
+        input_cidade.setText("Digite sua cidade aqui...");
+        input_cidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_cidadeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_cidadeFocusLost(evt);
+            }
+        });
         input_cidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_cidadeActionPerformed(evt);
@@ -108,6 +128,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel4.setText("Estado:");
 
         input_estado.setBackground(new java.awt.Color(204, 204, 204));
+        input_estado.setText("Digite seu estado aqui...");
+        input_estado.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_estadoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_estadoFocusLost(evt);
+            }
+        });
         input_estado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_estadoActionPerformed(evt);
@@ -119,6 +148,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel5.setText("CEP:");
 
         input_area.setBackground(new java.awt.Color(204, 204, 204));
+        input_area.setText("Digite a area do imovel aqui...");
+        input_area.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_areaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_areaFocusLost(evt);
+            }
+        });
         input_area.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_areaActionPerformed(evt);
@@ -130,6 +168,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel7.setText("Área: ");
 
         input_valor.setBackground(new java.awt.Color(204, 204, 204));
+        input_valor.setText("Digite o valor aqui...");
+        input_valor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_valorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_valorFocusLost(evt);
+            }
+        });
         input_valor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_valorActionPerformed(evt);
@@ -141,6 +188,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel8.setText("Valor:");
 
         input_cep.setBackground(new java.awt.Color(204, 204, 204));
+        input_cep.setText("Digite seu CEP aqui...");
+        input_cep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_cepFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_cepFocusLost(evt);
+            }
+        });
         input_cep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_cepActionPerformed(evt);
@@ -156,6 +212,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel13.setText("Quartos:");
 
         input_quartos.setBackground(new java.awt.Color(204, 204, 204));
+        input_quartos.setText("Digite quantidade de quartos aqui...");
+        input_quartos.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_quartosFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_quartosFocusLost(evt);
+            }
+        });
         input_quartos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_quartosActionPerformed(evt);
@@ -167,6 +232,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel14.setText("Banheiros:");
 
         input_banheiros.setBackground(new java.awt.Color(204, 204, 204));
+        input_banheiros.setText("Digite quantidade de banheiros aqui...");
+        input_banheiros.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_banheirosFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_banheirosFocusLost(evt);
+            }
+        });
         input_banheiros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_banheirosActionPerformed(evt);
@@ -178,6 +252,15 @@ public class CadastroImovel extends javax.swing.JFrame {
         jLabel15.setText("Vagas:");
 
         input_vagas.setBackground(new java.awt.Color(204, 204, 204));
+        input_vagas.setText("Digite quantidade de vagas aqui...");
+        input_vagas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_vagasFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_vagasFocusLost(evt);
+            }
+        });
         input_vagas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_vagasActionPerformed(evt);
@@ -199,12 +282,12 @@ public class CadastroImovel extends javax.swing.JFrame {
         select_tipoImovel.setBackground(new java.awt.Color(204, 204, 204));
         select_tipoImovel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         select_tipoImovel.setForeground(new java.awt.Color(153, 0, 0));
-        select_tipoImovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_tipoImovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apartamento", "Casa", "Cobertura", "Kitnet", "Loft", "Sobrado", "Studio", "Terreno", "Chácara", "Galpão" }));
 
         select_proprietario.setBackground(new java.awt.Color(204, 204, 204));
         select_proprietario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         select_proprietario.setForeground(new java.awt.Color(153, 0, 0));
-        select_proprietario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_proprietario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "José da Silva", "Maria Oliveira", "Paulo Santos", "Carla Martins", "Rafael Gomes", "Letícia Ferreira", "André Almeida", "Beatriz Souza", "Fábio Costa", "Viviane Rocha" }));
 
         btn_limparCampo.setBackground(new java.awt.Color(102, 102, 102));
         btn_limparCampo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -219,6 +302,11 @@ public class CadastroImovel extends javax.swing.JFrame {
         btn_cadastrarImovel.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarImovel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarImovel.setText("CADASTRAR");
+        btn_cadastrarImovel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarImovelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -259,36 +347,39 @@ public class CadastroImovel extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(input_area))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_quartos, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_banheiros))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_vagas)))
-                        .addGap(69, 69, 69)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(select_proprietario, 0, 104, Short.MAX_VALUE))
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel9))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(select_tipoImovel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel16)))
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(input_vagas, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(input_banheiros, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(input_quartos, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))))
+                        .addGap(91, 91, 91)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(select_proprietario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(select_tipoImovel, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -394,11 +485,11 @@ public class CadastroImovel extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(17, 17, 17)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,21 +518,21 @@ public class CadastroImovel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1005, Short.MAX_VALUE)
+            .addGap(0, 1075, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1063, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 529, Short.MAX_VALUE)
+            .addGap(0, 541, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -485,12 +576,172 @@ public class CadastroImovel extends javax.swing.JFrame {
 
     private void btn_limparCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparCampoActionPerformed
         // TODO add your handling code here:
+        input_endereco.setText("");
+        input_cidade.setText("");
+        input_estado.setText("");
+        input_cep.setText("");
+        input_valor.setText("");
+        input_area.setText("");
+        input_quartos.setText("");
+        input_banheiros.setText("");
+        input_vagas.setText("");
+        select_tipoImovel.setSelectedIndex(0);
+        select_proprietario.setSelectedIndex(0);
     }//GEN-LAST:event_btn_limparCampoActionPerformed
 
     private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_enderecoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_enderecoFocusGained
+        // TODO add your handling code here:
+        if (input_endereco.getText().equals("Digite seu endereco aqui...")) {
+            input_endereco.setText("");
+        }
+    }//GEN-LAST:event_input_enderecoFocusGained
+
+    private void input_enderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_enderecoFocusLost
+        // TODO add your handling code here:
+        if (input_endereco.getText().equals("")) {
+            input_endereco.setText("Digite seu endereco aqui...");
+        }
+    }//GEN-LAST:event_input_enderecoFocusLost
+
+    private void input_cidadeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cidadeFocusGained
+        // TODO add your handling code here:
+        if (input_cidade.getText().equals("Digite sua cidade aqui...")) {
+            input_cidade.setText("");
+        }
+    }//GEN-LAST:event_input_cidadeFocusGained
+
+    private void input_cidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cidadeFocusLost
+        // TODO add your handling code here:
+        if (input_cidade.getText().equals("")) {
+            input_cidade.setText("Digite sua cidade aqui...");
+        }
+    }//GEN-LAST:event_input_cidadeFocusLost
+
+    private void input_estadoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_estadoFocusGained
+        // TODO add your handling code here:
+        if (input_estado.getText().equals("Digite seu estado aqui...")) {
+            input_estado.setText("");
+        }
+    }//GEN-LAST:event_input_estadoFocusGained
+
+    private void input_estadoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_estadoFocusLost
+        // TODO add your handling code here:
+        if (input_estado.getText().equals("")) {
+            input_estado.setText("Digite seu estado aqui...");
+        }
+    }//GEN-LAST:event_input_estadoFocusLost
+
+    private void input_cepFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cepFocusGained
+        // TODO add your handling code here:
+        if (input_cep.getText().equals("Digite seu CEP aqui...")) {
+            input_cep.setText("");
+        }
+    }//GEN-LAST:event_input_cepFocusGained
+
+    private void input_cepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_cepFocusLost
+        // TODO add your handling code here:
+        if (input_cep.getText().equals("")) {
+            input_cep.setText("Digite seu CEP aqui...");
+        }
+    }//GEN-LAST:event_input_cepFocusLost
+
+    private void input_valorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorFocusGained
+        // TODO add your handling code here:
+        if (input_valor.getText().equals("Digite o valor aqui...")) {
+            input_valor.setText("");
+        }
+    }//GEN-LAST:event_input_valorFocusGained
+
+    private void input_valorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorFocusLost
+        // TODO add your handling code here:
+        if (input_valor.getText().equals("")) {
+            input_valor.setText("Digite o valor aqui...");
+        }
+    }//GEN-LAST:event_input_valorFocusLost
+
+    private void input_areaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_areaFocusGained
+        // TODO add your handling code here:
+        if (input_area.getText().equals("Digite a area do imovel aqui...")) {
+            input_area.setText("");
+        }
+    }//GEN-LAST:event_input_areaFocusGained
+
+    private void input_areaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_areaFocusLost
+        // TODO add your handling code here:
+        if (input_area.getText().equals("")) {
+            input_area.setText("Digite a area do imovel aqui...");
+        }
+    }//GEN-LAST:event_input_areaFocusLost
+
+    private void input_quartosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_quartosFocusGained
+        // TODO add your handling code here:
+        if (input_quartos.getText().equals("Digite quantidade de quartos aqui...")) {
+            input_quartos.setText("");
+        }
+    }//GEN-LAST:event_input_quartosFocusGained
+
+    private void input_quartosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_quartosFocusLost
+        // TODO add your handling code here:
+        if (input_quartos.getText().equals("")) {
+            input_quartos.setText("Digite quantidade de quartos aqui...");
+        }
+    }//GEN-LAST:event_input_quartosFocusLost
+
+    private void input_banheirosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_banheirosFocusGained
+        // TODO add your handling code here:
+        if (input_banheiros.getText().equals("Digite quantidade de banheiros aqui...")) {
+            input_banheiros.setText("");
+        }
+    }//GEN-LAST:event_input_banheirosFocusGained
+
+    private void input_banheirosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_banheirosFocusLost
+        // TODO add your handling code here:
+        if (input_banheiros.getText().equals("")) {
+            input_banheiros.setText("Digite quantidade de banheiros aqui...");
+        }
+    }//GEN-LAST:event_input_banheirosFocusLost
+
+    private void input_vagasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_vagasFocusGained
+        // TODO add your handling code here:
+        if (input_vagas.getText().equals("Digite quantidade de vagas aqui...")) {
+            input_vagas.setText("");
+        }
+    }//GEN-LAST:event_input_vagasFocusGained
+
+    private void input_vagasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_vagasFocusLost
+        // TODO add your handling code here:
+        if (input_vagas.getText().equals("")) {
+            input_vagas.setText("Digite quantidade de vagas aqui...");
+        }
+    }//GEN-LAST:event_input_vagasFocusLost
+
+    private void btn_cadastrarImovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarImovelActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar Imovel ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            Imovel i = new Imovel();
+            i.setEndereco(input_endereco.getText());
+            i.setCidade(input_cidade.getText());
+            i.setEstado(input_estado.getText());
+            i.setCep(input_cep.getText());
+            i.setValor(input_valor.getText());
+            i.setArea(input_area.getText());
+            i.setQuartos(input_quartos.getText());
+            i.setBanheiros(input_banheiros.getText());
+            i.setVagas(input_vagas.getText());
+            i.setTipoImovel((String) select_tipoImovel.getSelectedItem());
+            i.setProprietario((String) select_proprietario.getSelectedItem());
+            
+            area.setText(i.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarImovelActionPerformed
 
     /**
      * @param args the command line arguments

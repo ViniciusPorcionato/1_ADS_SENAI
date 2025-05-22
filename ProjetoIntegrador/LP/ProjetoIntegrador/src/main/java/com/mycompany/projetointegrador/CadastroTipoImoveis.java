@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -76,8 +78,22 @@ public class CadastroTipoImoveis extends javax.swing.JFrame {
         btn_cadastrarTipoImovel.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarTipoImovel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarTipoImovel.setText("CADASTRAR");
+        btn_cadastrarTipoImovel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarTipoImovelActionPerformed(evt);
+            }
+        });
 
         input_descricao.setBackground(new java.awt.Color(204, 204, 204));
+        input_descricao.setText("Digite a descricao aqui...");
+        input_descricao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_descricaoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_descricaoFocusLost(evt);
+            }
+        });
         input_descricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_descricaoActionPerformed(evt);
@@ -227,6 +243,31 @@ public class CadastroTipoImoveis extends javax.swing.JFrame {
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_descricaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_descricaoFocusGained
+        // TODO add your handling code here:
+        if (input_descricao.getText().equals("Digite a descricao aqui...")) {
+            input_descricao.setText("");
+        }
+    }//GEN-LAST:event_input_descricaoFocusGained
+
+    private void input_descricaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_descricaoFocusLost
+        // TODO add your handling code here:
+        if (input_descricao.getText().equals("")) {
+            input_descricao.setText("Digite a descricao aqui...");
+        }
+    }//GEN-LAST:event_input_descricaoFocusLost
+
+    private void btn_cadastrarTipoImovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarTipoImovelActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            TipoImovel tipo = new TipoImovel();
+            tipo.setDescricao(input_descricao.getText());
+            area.setText(tipo.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarTipoImovelActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package com.mycompany.projetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vinicius Porcionato
@@ -33,17 +35,17 @@ public class CadastroLocacao extends javax.swing.JFrame {
         btn_menu = new javax.swing.JButton();
         btn_limparCampo = new javax.swing.JButton();
         btn_cadastrarCliente = new javax.swing.JButton();
-        input_nome = new javax.swing.JTextField();
+        input_dataInicio = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        input_nome1 = new javax.swing.JTextField();
+        input_dataFim = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        input_nome2 = new javax.swing.JTextField();
+        input_valorLocacao = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        select_imovel = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        select_locatario = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        select_corretor = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -86,11 +88,25 @@ public class CadastroLocacao extends javax.swing.JFrame {
         btn_cadastrarCliente.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cadastrarCliente.setText("CADASTRAR");
-
-        input_nome.setBackground(new java.awt.Color(204, 204, 204));
-        input_nome.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nomeActionPerformed(evt);
+                btn_cadastrarClienteActionPerformed(evt);
+            }
+        });
+
+        input_dataInicio.setBackground(new java.awt.Color(204, 204, 204));
+        input_dataInicio.setText("Digite a data de inicio aqui...");
+        input_dataInicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_dataInicioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_dataInicioFocusLost(evt);
+            }
+        });
+        input_dataInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                input_dataInicioActionPerformed(evt);
             }
         });
 
@@ -98,10 +114,19 @@ public class CadastroLocacao extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Data Fim: ");
 
-        input_nome1.setBackground(new java.awt.Color(204, 204, 204));
-        input_nome1.addActionListener(new java.awt.event.ActionListener() {
+        input_dataFim.setBackground(new java.awt.Color(204, 204, 204));
+        input_dataFim.setText("Digite a data de fim aqui...");
+        input_dataFim.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_dataFimFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_dataFimFocusLost(evt);
+            }
+        });
+        input_dataFim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nome1ActionPerformed(evt);
+                input_dataFimActionPerformed(evt);
             }
         });
 
@@ -109,10 +134,19 @@ public class CadastroLocacao extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("Valor Mensal:");
 
-        input_nome2.setBackground(new java.awt.Color(204, 204, 204));
-        input_nome2.addActionListener(new java.awt.event.ActionListener() {
+        input_valorLocacao.setBackground(new java.awt.Color(204, 204, 204));
+        input_valorLocacao.setText("Digite o valor da locacao aqui...");
+        input_valorLocacao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_valorLocacaoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_valorLocacaoFocusLost(evt);
+            }
+        });
+        input_valorLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nome2ActionPerformed(evt);
+                input_valorLocacaoActionPerformed(evt);
             }
         });
 
@@ -120,28 +154,28 @@ public class CadastroLocacao extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Imovél: ");
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_imovel.setBackground(new java.awt.Color(204, 204, 204));
+        select_imovel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_imovel.setForeground(new java.awt.Color(153, 0, 0));
+        select_imovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Imovel 1", "Imovel 2", "Imovel 3", "Imovel 4", "Imovel 5", "Imovel 6", "Imovel 7", "Imovel 8", "Imovel 9", "Imovel 10" }));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
         jLabel7.setText("Locatário:");
 
-        jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_locatario.setBackground(new java.awt.Color(204, 204, 204));
+        select_locatario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_locatario.setForeground(new java.awt.Color(153, 0, 0));
+        select_locatario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ana Paula Souza", "Carlos Eduardo Lima", "Juliana Mendes", "Bruno Rocha", "Mariana Ferreira", "Lucas Martins", "Fernanda Dias", "Rodrigo Alves", "Patrícia Gomes", "Thiago Santana" }));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 0, 0));
         jLabel9.setText("Corretor:");
 
-        jComboBox3.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(153, 0, 0));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        select_corretor.setBackground(new java.awt.Color(204, 204, 204));
+        select_corretor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        select_corretor.setForeground(new java.awt.Color(153, 0, 0));
+        select_corretor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "João Oliveira", "Renata Lima", "Felipe Silva", "Luciana Mendes", "Gabriel Costa", "Isabela Moreira", "Roberto Souza", "Camila Ribeiro", "Daniel Freitas", "Elaine Martins" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -164,30 +198,30 @@ public class CadastroLocacao extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(input_dataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_nome1))
+                                .addComponent(input_dataFim))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_nome2))
+                                .addComponent(input_valorLocacao))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(select_locatario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(select_imovel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(select_corretor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(2, 2, 2)))
                         .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -202,27 +236,27 @@ public class CadastroLocacao extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(input_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(input_dataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(input_nome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(input_dataFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(input_nome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(input_valorLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_imovel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_locatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(select_corretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_limparCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,24 +346,92 @@ public class CadastroLocacao extends javax.swing.JFrame {
 
     private void btn_limparCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparCampoActionPerformed
         // TODO add your handling code here:
+        input_dataInicio.setText("");
+        input_dataFim.setText("");
+        input_valorLocacao.setText("");
+        select_imovel.setSelectedIndex(0);
+        select_locatario.setSelectedIndex(0);
+        select_corretor.setSelectedIndex(0);
     }//GEN-LAST:event_btn_limparCampoActionPerformed
 
-    private void input_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nomeActionPerformed
+    private void input_dataInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_dataInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nomeActionPerformed
+    }//GEN-LAST:event_input_dataInicioActionPerformed
 
-    private void input_nome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nome1ActionPerformed
+    private void input_dataFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_dataFimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nome1ActionPerformed
+    }//GEN-LAST:event_input_dataFimActionPerformed
 
-    private void input_nome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nome2ActionPerformed
+    private void input_valorLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_valorLocacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nome2ActionPerformed
+    }//GEN-LAST:event_input_valorLocacaoActionPerformed
 
     private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
         dispose();
         new MenuOptions().setVisible(true);
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void input_dataInicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataInicioFocusGained
+        // TODO add your handling code here:
+        if (input_dataInicio.getText().equals("Digite a data de inicio aqui...")) {
+            input_dataInicio.setText("");
+        }
+    }//GEN-LAST:event_input_dataInicioFocusGained
+
+    private void input_dataInicioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataInicioFocusLost
+        // TODO add your handling code here:
+        if (input_dataInicio.getText().equals("")) {
+            input_dataInicio.setText("Digite a data de inicio aqui...");
+        }
+    }//GEN-LAST:event_input_dataInicioFocusLost
+
+    private void input_dataFimFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataFimFocusGained
+        // TODO add your handling code here:
+        if (input_dataFim.getText().equals("Digite a data de fim aqui...")) {
+            input_dataFim.setText("");
+        }
+    }//GEN-LAST:event_input_dataFimFocusGained
+
+    private void input_dataFimFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_dataFimFocusLost
+        // TODO add your handling code here:
+        if (input_dataFim.getText().equals("")) {
+            input_dataFim.setText("Digite a data de fim aqui...");
+        }
+    }//GEN-LAST:event_input_dataFimFocusLost
+
+    private void input_valorLocacaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorLocacaoFocusGained
+        // TODO add your handling code here:
+        if (input_valorLocacao.getText().equals("Digite o valor da locacao aqui...")) {
+            input_valorLocacao.setText("");
+        }
+    }//GEN-LAST:event_input_valorLocacaoFocusGained
+
+    private void input_valorLocacaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_input_valorLocacaoFocusLost
+        // TODO add your handling code here:
+        if (input_valorLocacao.getText().equals("")) {
+            input_valorLocacao.setText("Digite o valor da locacao aqui...");
+        }
+    }//GEN-LAST:event_input_valorLocacaoFocusLost
+
+    private void btn_cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarClienteActionPerformed
+        // TODO add your handling code here:
+        int valor = JOptionPane.showConfirmDialog(null, "Deseja realemente cadastrar Imovel ?", "opções", JOptionPane.YES_NO_CANCEL_OPTION);
+        
+        // yes = 0; no = 1; cancel = 2;
+        if (valor == 0) {
+            
+            Locacao l = new Locacao();
+            
+            l.setDataInicio(input_dataInicio.getText());
+            l.setDataFim(input_dataFim.getText());
+            l.setValor(input_valorLocacao.getText());
+            l.setImovel((String) select_imovel.getSelectedItem());
+            l.setLocatario((String) select_locatario.getSelectedItem());
+            l.setCorretor((String) select_corretor.getSelectedItem());
+            
+            area.setText(l.toString());
+        }
+    }//GEN-LAST:event_btn_cadastrarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,12 +474,9 @@ public class CadastroLocacao extends javax.swing.JFrame {
     private javax.swing.JButton btn_cadastrarCliente;
     private javax.swing.JButton btn_limparCampo;
     private javax.swing.JButton btn_menu;
-    private javax.swing.JTextField input_nome;
-    private javax.swing.JTextField input_nome1;
-    private javax.swing.JTextField input_nome2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JTextField input_dataFim;
+    private javax.swing.JTextField input_dataInicio;
+    private javax.swing.JTextField input_valorLocacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -391,5 +490,8 @@ public class CadastroLocacao extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox<String> select_corretor;
+    private javax.swing.JComboBox<String> select_imovel;
+    private javax.swing.JComboBox<String> select_locatario;
     // End of variables declaration//GEN-END:variables
 }
