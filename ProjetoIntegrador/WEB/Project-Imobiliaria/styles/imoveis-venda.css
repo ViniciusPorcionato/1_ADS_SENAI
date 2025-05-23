@@ -64,98 +64,86 @@ body {
   text-decoration: underline;
 }
 
-/* Estilos para a página de Termos */
-.terms-header {
-  background-color: #8D001A;
-  padding: 60px 0 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* Properties Page Styles */
+.properties-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 0;
 }
 
-.terms-header-content {
-  width: 85%;
-  max-width: 900px;
-  margin: 0 auto;
-  color: white;
+.page-title {
+  font-family: Poppins-Bold;
+  font-size: 32px;
+  color: #8d001a;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.terms-title {
-  font-family: Poppins-Bold;
-  font-size: 32px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
-.terms-subtitle {
-  font-family: Poppins-SemiBold;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 10px;
+.property-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.terms-container {
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.property-image {
   width: 100%;
-  padding: 0 0 60px;
-  background-color: #fff;
+  height: 200px;
+  object-fit: cover;
 }
 
-.terms-content {
-  width: 85%;
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: Poppins;
-  color: #333;
+.property-info {
+  padding: 20px;
 }
 
-.terms-section {
-  margin-bottom: 40px;
-}
-
-.terms-section h3 {
+.property-title {
   font-family: Poppins-SemiBold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.property-location {
+  font-family: Poppins;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.property-price {
+  font-family: Poppins-Bold;
   font-size: 20px;
-  color: #8D001A;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #eee;
+  color: #8d001a;
 }
 
-.terms-section p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-/* Responsiveness */
+/* Responsividade */
 @media (max-width: 768px) {
-  .terms-header {
-    padding: 40px 0 30px;
+  .properties-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
-  
-  .terms-title {
+
+  .page-title {
     font-size: 28px;
-  }
-  
-  .terms-subtitle {
-    font-size: 20px;
-  }
-  
-  .terms-section h3 {
-    font-size: 18px;
-  }
-  
-  .terms-section p {
-    font-size: 15px;
   }
 }
 
 /* Existing Footer Styles (ensure these are in your styles.css) */
 .site-footer {
-  background-color: #8D001A;
+  background-color: #8d001a;
   color: #ffffff;
   padding: 60px 0 20px;
   font-family: Poppins;
@@ -172,7 +160,7 @@ body {
 
 /* Rodapé */
 .site-footer {
-  background-color: #8D001A;
+  background-color: #8d001a;
   color: #ffffff;
   padding: 60px 0 20px;
   font-family: Poppins;
@@ -254,12 +242,12 @@ body {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .footer-brand {
     align-items: center;
     text-align: center;
   }
-  
+
   .footer-column {
     text-align: center;
   }

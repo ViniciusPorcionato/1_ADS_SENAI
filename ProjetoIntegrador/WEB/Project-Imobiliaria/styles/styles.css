@@ -664,3 +664,21 @@ body {
     text-align: center;
   }
 }
+
+/* Adicione ao final do arquivo */
+select:disabled {
+  opacity: 1; /* Mantém a aparência normal */
+  background-color: #f8f8f8;
+  cursor: default;
+}
+
+.tab-button {
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #8D001A;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

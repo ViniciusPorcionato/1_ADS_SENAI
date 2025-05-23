@@ -24,7 +24,7 @@
     </header>
 
     <main>
-      <!-- Sessão de pesquisa de imoveis -->
+      <!-- Substitua a seção de pesquisa por: -->
       <section class="section-search">
         <img
           class="image-banner"
@@ -36,16 +36,24 @@
             <h2>O imóvel que você procura está aqui!</h2>
 
             <div class="tab-options">
-              <button class="tab-button active">COMPRAR</button>
-              <button class="tab-button">ALUGAR</button>
+              <button
+                type="button"
+                class="tab-button active"
+                data-action="comprar"
+              >
+                COMPRAR
+              </button>
+              <button type="button" class="tab-button" data-action="alugar">
+                ALUGAR
+              </button>
             </div>
 
             <hr class="tab-divider" />
 
-            <form class="search-form">
+            <form id="searchForm" class="search-form">
               <div class="form-group">
                 <label for="tipo-imovel">Tipo de Imóvel</label>
-                <select id="tipo-imovel" name="tipo-imovel">
+                <select id="tipo-imovel" name="tipo-imovel" disabled>
                   <option value="">Selecione</option>
                   <option value="casa">Casa</option>
                   <option value="apartamento">Apartamento</option>
@@ -55,7 +63,7 @@
 
               <div class="form-group">
                 <label for="localizacao">Onde Deseja Morar?</label>
-                <select id="localizacao" name="localizacao">
+                <select id="localizacao" name="localizacao" disabled>
                   <option value="">Selecione</option>
                   <option value="sp">São Paulo</option>
                   <option value="rj">Rio de Janeiro</option>
@@ -160,7 +168,7 @@
             <li><a href="#">Imóveis</a></li>
             <li><a href="#">Seguros</a></li>
             <li><a href="#">Contato</a></li>
-            <li><a href="#">Termos e Condições</a></li>
+            <li><a href="termos.html">Termos e Condições</a></li>
           </ul>
         </div>
 
