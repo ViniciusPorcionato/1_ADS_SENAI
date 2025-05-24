@@ -76,10 +76,10 @@
 }
 
 .sobre-nos-image {
-  width: 100%;
-  max-width: 200px;
+  width: 40%;
   height: auto;
   object-fit: contain; 
+  border-radius: 15px;
 }
 
 .sobre-nos-text {
