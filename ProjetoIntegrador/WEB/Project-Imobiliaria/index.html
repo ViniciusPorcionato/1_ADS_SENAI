@@ -17,6 +17,7 @@
         />
         <nav class="navbar">
           <a class="link" href="index.html">Início</a>
+          <a class="link" href="imoveis.html">Imovéis</a>
           <a class="link" href="">Sobre nós</a>
           <a class="link active" href="contato.html">Contato</a>
         </nav>
@@ -79,13 +80,169 @@
 
       <!-- Sessão de imóveis em destaque -->
       <section class="section-featured">
+
         <div class="featured-container">
           <h2>Imóveis em Destaque</h2>
           <div class="carousel-container">
             <button class="carousel-btn left" onclick="scrollCarousel(-1)">
               ‹
             </button>
-            <div id="carousel-track" class="carousel-track"></div>
+            <div class="carousel-track">
+              <!-- Card 1 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=1'"
+              >
+                <img
+                  src="./assets/images/casa1.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=2'"
+              >
+                <img
+                  src="./assets/images/casa2.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=3'"
+              >
+                <img
+                  src="./assets/images/casa3.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa4.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa5.png"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa6.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa7.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa8.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div
+                class="card"
+                onclick="window.location.href='detalhes.html?id=4'"
+              >
+                <img
+                  src="./assets/images/casa9.jpg"
+                  alt="Casa no Praia"
+                  class="image-card"
+                />
+                <div class="content-card">
+                  <h3 class="title-card">Casa no Praia</h3>
+                  <p class="location-card">Santos, Praia Grande</p>
+                  <p class="price-card">R$ 1.200.000</p>
+                </div>
+              </div>
+
+              <!-- Adicione mais cards conforme necessário -->
+            </div>
             <button class="carousel-btn right" onclick="scrollCarousel(1)">
               ›
             </button>
@@ -111,7 +268,7 @@
           </div>
           <div class="about-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8758416235255!2d-46.708980823913976!3d-23.57290226201773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57d2b302863b%3A0xa9aacefb10ced575!2sShare%20Butant%C3%A3!5e0!3m2!1spt-BR!2sbr!4v1748198788589!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.491546262497!2d-46.47528112378647!3d-23.622561363845158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce692c973ba0ed%3A0x62475205499d26d2!2zVGFsaXNtw6MgSW3Ds3ZlaXM!5e0!3m2!1spt-BR!2sbr!4v1748297486880!5m2!1spt-BR!2sbr"
               width="100%"
               height="450"
               style="border: 0"

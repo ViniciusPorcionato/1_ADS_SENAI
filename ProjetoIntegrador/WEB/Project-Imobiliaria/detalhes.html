@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Imóvel | Talismã Imóveis</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <!-- Header (igual às outras páginas) -->
+  
+  <main>
+    <div class="property-detail">
+      <div class="property-gallery">
+        <img id="mainImage" src="./assets/images/casa1.jpg" alt="Imóvel" class="main-image">
+        <img src="./assets/images/casa2.jpg" alt="Imóvel" class="thumbnail" onclick="changeImage(this.src)">
+        <img src="./assets/images/casa3.jpg" alt="Imóvel" class="thumbnail" onclick="changeImage(this.src)">
+      </div>
+      
+      <div class="property-info">
+        <p class="property-price">R$ 222.999</p>
+        <h1 class="property-title">Apartamento São Caetano</h1>
+        <p class="property-description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+        
+        <div class="action-buttons">
+          <button class="btn-detail">VEJA MAIS</button>
+          <button class="btn-buy">COMPRAR AGORA</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (igual às outras páginas) -->
+
+  <script src="./js/scripts.js"></script>
+</body>
+</html>
