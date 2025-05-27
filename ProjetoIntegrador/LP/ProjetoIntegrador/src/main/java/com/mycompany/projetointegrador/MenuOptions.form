@@ -83,15 +83,18 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btn_cadastroCliente" max="32767" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_cadastroCorretor" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_cadastroTipoImovel" alignment="0" pref="252" max="32767" attributes="0"/>
-                          <Component id="btn_cadastroProrietario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_cadastroImoveis" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_cadastroLocacao" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_cadastroVenda" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btn_cadastroCliente" max="32767" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_cadastroCorretor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_cadastroTipoImovel" alignment="0" pref="252" max="32767" attributes="0"/>
+                              <Component id="btn_cadastroProrietario" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_cadastroImoveis" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_cadastroLocacao" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_cadastroVenda" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="26" max="32767" attributes="0"/>
                   </Group>
@@ -116,7 +119,9 @@
                       <Component id="btn_cadastroLocacao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btn_cadastroVenda" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="84" max="32767" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -247,6 +252,20 @@
                   <Image iconType="2" name="C:\Users\Vinicius Porcionato\Desktop\1_ADS_SENAI\ProjetoIntegrador\LP\ProjetoIntegrador\Assets\menu2.png"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="LOGOUT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
