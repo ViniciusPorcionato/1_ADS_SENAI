@@ -16,9 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (searchForm) {
     searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      window.location.href = currentAction === "comprar" 
-        ? "imoveis-venda.html" 
-        : "imoveis-aluga.html";
+      window.location.href =
+        currentAction === "comprar"
+          ? "imoveis-venda.html"
+          : "imoveis-aluga.html";
     });
   }
 });
@@ -30,18 +31,8 @@ function scrollCarousel(direction) {
 
   container.scrollBy({
     left: 300 * direction,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 }
 
-// Função global para trocar imagem na página de detalhes
-function changeImage(src) {
-  const mainImage = document.getElementById("mainImage");
-  if (mainImage) {
-    mainImage.style.opacity = 0;
-    setTimeout(() => {
-      mainImage.src = src;
-      mainImage.style.opacity = 1;
-    }, 200);
-  }
-}
+// Função ao clicar no card e abrir detalhes

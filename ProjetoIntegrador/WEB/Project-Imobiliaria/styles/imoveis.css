@@ -66,10 +66,10 @@ body {
 
 /* Estilos para a página de Termos */
 .terms-header {
-  background-color: #8D001A;
+  background-color: #8d001a;
   padding: 60px 0 40px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .terms-header-content {
@@ -182,14 +182,14 @@ body {
 .price {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #8D001A;
+  color: #8d001a;
   font-family: Poppins-Bold;
 }
 
 .card-button {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background-color: #8D001A;
+  background-color: #8d001a;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -199,7 +199,7 @@ body {
 }
 
 .card-button:hover {
-  background-color: #1f6b4f;
+  background-color: #49000e;
 }
 
 /* Responsive adjustments */
@@ -214,6 +214,30 @@ body {
   .cards-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* Estilo para o link do card */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Ajuste para o botão dentro do link */
+.card-link .card-button {
+  display: inline-block; /* Para manter o estilo de botão */
+}
+
+/* Efeito hover para todo o card */
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Transição suave */
+.property-card {
+  transition: all 0.3s ease;
 }
 
 /* Existing Footer Styles (ensure these are in your styles.css) */
