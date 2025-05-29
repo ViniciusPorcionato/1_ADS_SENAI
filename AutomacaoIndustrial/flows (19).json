@@ -1,0 +1,1256 @@
+[
+    {
+        "id": "b7902c1b92d1dce3",
+        "type": "tab",
+        "label": "Fluxo 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "341ea8985b40e6e6",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://190.201.100.92:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "8f25972e33622463",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://190.201.100.52:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "3de391411ca47b96",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d636c74018cd3676",
+        "type": "ui_group",
+        "name": "Controle do processo",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "95b98167e0e5b47b",
+        "type": "ui_group",
+        "name": "LIGA/DELIGA",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b5e3a7f81c9baf4d",
+        "type": "ui_group",
+        "name": "DESAFIO",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b59afa965377f8c1",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "2982d664d691c036",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp//190.201.100.102:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "40bb52c9f02a104e",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://190.201.100.91:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "68e82fad7ff62168",
+        "type": "ui_group",
+        "name": "Controle do Progresso",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4d1d9ec552e7b637",
+        "type": "ui_group",
+        "name": "Status Cilindro",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e6f1a96fef78e0d7",
+        "type": "ui_group",
+        "name": "Controle do Processo",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "23852a41cf8533e0",
+        "type": "ui_group",
+        "name": "Passo Atual",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "637f4a6d727780fc",
+        "type": "ui_group",
+        "name": "Controle",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a36738e5204a0774",
+        "type": "MySQLdatabase",
+        "name": "TB",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIB",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "1a74ac1a0657055e",
+        "type": "MySQLdatabase",
+        "name": "TURMA B",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIB",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "52fc9026bc0602ff",
+        "type": "ui_group",
+        "name": "Consulta bd",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "50d684d437eb3a70",
+        "type": "MySQLdatabase",
+        "name": "TURMA A",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "fa6013b4b10e3f86",
+        "type": "ui_group",
+        "name": "Tabela de Dados",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "24e630b4410e5f89",
+        "type": "MySQLdatabase",
+        "name": "Database",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "2dd681617b15ed90",
+        "type": "MySQLdatabase",
+        "name": "AIA",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d702b80a6b243ccc",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.15.82:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "fb2ad7f695716619",
+        "type": "ui_group",
+        "name": "Controle do Processo",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e75b71b2d8a24721",
+        "type": "ui_group",
+        "name": "Simulação Dupla",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "16413acb6ad5afda",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "3075620a15ac4eef",
+        "type": "ui_group",
+        "name": "Controle",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8982ba2f48c37874",
+        "type": "ui_group",
+        "name": "Passo Atual",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d2274f77a869edee",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "8eed67e85d131734",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "16185286e98a52c8",
+        "type": "MySQLdatabase",
+        "name": "MySQL",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AI_A",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "35fb9e40e3ea0244",
+        "type": "ui_group",
+        "name": "Tabela de Dados",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2ee451162b01a081",
+        "type": "ui_group",
+        "name": "exemplo 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6c77e82f7f6c9144",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://190.201.100.102:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "386ab53522cf7ce6",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2125f6c53e121fed",
+        "type": "MySQLdatabase",
+        "name": "Mysql",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "e45f54304f655b6d",
+        "type": "MySQLdatabase",
+        "name": "MySQL",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "9b3a2f45f6984169",
+        "type": "MySQLdatabase",
+        "name": "Mysql",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "52e17cb8592fb291",
+        "type": "MySQLdatabase",
+        "name": "MySQL",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "a87711989a4f8b4f",
+        "type": "MySQLdatabase",
+        "name": "Mysql",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AIA",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "c013b41034aa0570",
+        "type": "ui_group",
+        "name": "Consulta ao Banco de Dados",
+        "tab": "386ab53522cf7ce6",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "96672e38d239f227",
+        "type": "ui_tab",
+        "name": "IVH-TB",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "56669c4ba8cbf68e",
+        "type": "ui_group",
+        "name": "CLP",
+        "tab": "96672e38d239f227",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "27a28d6066881e85",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "96672e38d239f227",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "83a4350b78a61df6",
+        "type": "telegram bot",
+        "botname": "BotAutomacao",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "0bc6fb1b4102cd7d",
+        "type": "telegram bot",
+        "botname": "ronaldinhoclp_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "538d2093f8973eb6",
+        "type": "ui_tab",
+        "name": "Tela Principal",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a69a29739d33979f",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1169e68e564dffad",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5086ae0c389bbb60",
+        "type": "ui_tab",
+        "name": "Tela Principal",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2ce2f28b18441fd9",
+        "type": "ui_group",
+        "name": "Controle do Processo",
+        "tab": "5086ae0c389bbb60",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c34bbe04780a470f",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3b3aceaec7df4903",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#f50000",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#f50000",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#f50000",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#ff4242",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#f50000",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f1c494e8ea5f047b",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cf36e1e8d393db9d",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e791ec52f8f9213f",
+        "type": "ui_tab",
+        "name": "Banco de Dados",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3ee49edbcc29892e",
+        "type": "ui_tab",
+        "name": "Tela Principal",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7b2ade5cfa3dce7f",
+        "type": "telegram receiver",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "bot": "0bc6fb1b4102cd7d",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 210,
+        "y": 880,
+        "wires": [
+            [
+                "6fab314c33ac7d58"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6fab314c33ac7d58",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "function 8",
+        "func": "let chatId = msg.payload.chatId;\nglobal.set(\"chatId\", chatId);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 860,
+        "wires": [
+            [
+                "3e4e78c1c3286243"
+            ]
+        ]
+    },
+    {
+        "id": "3e4e78c1c3286243",
+        "type": "switch",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "property": "payload.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Avançar",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Recuar",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Ler dados",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 610,
+        "y": 860,
+        "wires": [
+            [
+                "2e2ab2951748ec7b",
+                "6e162007afae99cf"
+            ],
+            [
+                "e5813decb771a181",
+                "c60cce694fc94a89"
+            ],
+            [
+                "fa6c460b36fabead"
+            ],
+            [
+                "c447464d9f433fec"
+            ]
+        ]
+    },
+    {
+        "id": "2e2ab2951748ec7b",
+        "type": "OpcUa-Item",
+        "z": "b7902c1b92d1dce3",
+        "item": "ns=4;s=|var|XP325.Application.Node_Red.start",
+        "datatype": "Boolean",
+        "value": "true",
+        "name": "",
+        "x": 900,
+        "y": 620,
+        "wires": [
+            [
+                "c5b1e653b713cb8e",
+                "2b55f3e370bff432"
+            ]
+        ]
+    },
+    {
+        "id": "c5b1e653b713cb8e",
+        "type": "OpcUa-Client",
+        "z": "b7902c1b92d1dce3",
+        "endpoint": "6c77e82f7f6c9144",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 1340,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e5813decb771a181",
+        "type": "OpcUa-Item",
+        "z": "b7902c1b92d1dce3",
+        "item": "ns=4;s=|var|XP325.Application.Node_Red.stop",
+        "datatype": "Boolean",
+        "value": "false",
+        "name": "",
+        "x": 1240,
+        "y": 760,
+        "wires": [
+            [
+                "0db61eb80aa3c75f",
+                "9a6cbefca817eeb8"
+            ]
+        ]
+    },
+    {
+        "id": "6e162007afae99cf",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "function 1",
+        "func": "msg.payload= {\n    chatId: 5906916485,\n    type: \"message\",\n    content: \"Acionado!\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 640,
+        "wires": [
+            [
+                "a547e622dfdf689a"
+            ]
+        ]
+    },
+    {
+        "id": "a547e622dfdf689a",
+        "type": "telegram sender",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "bot": "0bc6fb1b4102cd7d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c60cce694fc94a89",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "function 2",
+        "func": "msg.payload= {\n    chatId: 5906916485,\n    type: \"message\",\n    content: \"Desacionado!\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 920,
+        "wires": [
+            [
+                "eda5d05665cde6b7"
+            ]
+        ]
+    },
+    {
+        "id": "eda5d05665cde6b7",
+        "type": "telegram sender",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "bot": "0bc6fb1b4102cd7d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1130,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0db61eb80aa3c75f",
+        "type": "OpcUa-Client",
+        "z": "b7902c1b92d1dce3",
+        "endpoint": "6c77e82f7f6c9144",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 1660,
+        "y": 740,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fa6c460b36fabead",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "Montar SQL",
+        "func": "msg.topic = \"SELECT * FROM dados_sensores LIMIT 10\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1040,
+        "wires": [
+            [
+                "326916171bc43816"
+            ]
+        ]
+    },
+    {
+        "id": "326916171bc43816",
+        "type": "mysql",
+        "z": "b7902c1b92d1dce3",
+        "mydb": "1a74ac1a0657055e",
+        "name": "Banco de Dados",
+        "x": 1110,
+        "y": 1040,
+        "wires": [
+            [
+                "0471a46755318b2c"
+            ]
+        ]
+    },
+    {
+        "id": "89b25c946930f5f8",
+        "type": "telegram sender",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "bot": "0bc6fb1b4102cd7d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0471a46755318b2c",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "Formatar HTML",
+        "func": "let dados = msg.payload;\n\nlet texto = \"```\\nTemperatura (°C) | Pressão (bar)\\n\";\nfor (let linha of dados) {\n    texto += `${linha.temperatura.toString().padEnd(17)}| ${linha.pressao}\\n`;\n}\ntexto += \"```\";\n\nmsg.payload = {\n    chatId: 5906916485,\n    type: \"message\",\n    content: texto\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 1040,
+        "wires": [
+            [
+                "89b25c946930f5f8"
+            ]
+        ]
+    },
+    {
+        "id": "dd1ad453c985cba6",
+        "type": "delay",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1160,
+        "y": 540,
+        "wires": [
+            [
+                "c5b1e653b713cb8e"
+            ]
+        ]
+    },
+    {
+        "id": "2b55f3e370bff432",
+        "type": "change",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 540,
+        "wires": [
+            [
+                "dd1ad453c985cba6"
+            ]
+        ]
+    },
+    {
+        "id": "daffb762b0dd9db6",
+        "type": "delay",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1560,
+        "y": 820,
+        "wires": [
+            [
+                "0db61eb80aa3c75f"
+            ]
+        ]
+    },
+    {
+        "id": "9a6cbefca817eeb8",
+        "type": "change",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 820,
+        "wires": [
+            [
+                "daffb762b0dd9db6"
+            ]
+        ]
+    },
+    {
+        "id": "c447464d9f433fec",
+        "type": "function",
+        "z": "b7902c1b92d1dce3",
+        "name": "function 3",
+        "func": "msg.payload= {\n    chatId: 5906916485,\n    type: \"message\",\n    content: \"Não compreendo este comando. Digite novamente\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1100,
+        "wires": [
+            [
+                "c2a519998842a55a"
+            ]
+        ]
+    },
+    {
+        "id": "c2a519998842a55a",
+        "type": "telegram sender",
+        "z": "b7902c1b92d1dce3",
+        "name": "",
+        "bot": "0bc6fb1b4102cd7d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    }
+]

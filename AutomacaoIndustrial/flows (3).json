@@ -1,0 +1,607 @@
+[
+    {
+        "id": "fc337c62658e234d",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ae7d977202f263e8",
+        "type": "OpcUa-Item",
+        "z": "fc337c62658e234d",
+        "item": "ns=4;s=|var|XP325.Application.Node_Red.start_maq",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Start",
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "b760c75bca2635fd"
+            ]
+        ]
+    },
+    {
+        "id": "4c7ab3c64fa13925",
+        "type": "inject",
+        "z": "fc337c62658e234d",
+        "name": "desliga",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "7ab4a50d6ae29f8f",
+                "b6409f8445ee8b8c"
+            ]
+        ]
+    },
+    {
+        "id": "7ab4a50d6ae29f8f",
+        "type": "OpcUa-Item",
+        "z": "fc337c62658e234d",
+        "item": "ns=4;s=|var|XP325.Application.Node_Red.stop_maq",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Stop",
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "b760c75bca2635fd"
+            ]
+        ]
+    },
+    {
+        "id": "b6409f8445ee8b8c",
+        "type": "change",
+        "z": "fc337c62658e234d",
+        "name": "False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "3317ca366a94cd10"
+            ]
+        ]
+    },
+    {
+        "id": "3317ca366a94cd10",
+        "type": "delay",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "7ab4a50d6ae29f8f"
+            ]
+        ]
+    },
+    {
+        "id": "b760c75bca2635fd",
+        "type": "OpcUa-Client",
+        "z": "fc337c62658e234d",
+        "endpoint": "ec3b11727f94fc06",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 740,
+        "y": 240,
+        "wires": [
+            [
+                "01ea968ba4319ce0"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "037cf7b3dacd1e2e",
+        "type": "inject",
+        "z": "fc337c62658e234d",
+        "name": "lerDados",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "503f781a988b4394"
+            ]
+        ]
+    },
+    {
+        "id": "503f781a988b4394",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Montar SQL",
+        "func": "msg.topic = \"SELECT * FROM dados_sensores LIMIT 10;\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 500,
+        "wires": [
+            [
+                "f5aa8d3a7f505243"
+            ]
+        ]
+    },
+    {
+        "id": "f5aa8d3a7f505243",
+        "type": "mysql",
+        "z": "fc337c62658e234d",
+        "mydb": "f7b91b2886f590ff",
+        "name": "MySQL",
+        "x": 580,
+        "y": 500,
+        "wires": [
+            [
+                "dd8c34b3d84ec1be",
+                "dbfbc222fa6ff972"
+            ]
+        ]
+    },
+    {
+        "id": "01ea968ba4319ce0",
+        "type": "OpcUa-Item",
+        "z": "fc337c62658e234d",
+        "item": "ns=4;s=|var|XP325.Application.Node_Red.atuador",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Atuador",
+        "x": 920,
+        "y": 200,
+        "wires": [
+            [
+                "27fb4ab46bc87e91"
+            ]
+        ]
+    },
+    {
+        "id": "27fb4ab46bc87e91",
+        "type": "debug",
+        "z": "fc337c62658e234d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f379162ec66ce4ec",
+        "type": "inject",
+        "z": "fc337c62658e234d",
+        "name": "input",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 1020,
+        "wires": [
+            [
+                "327fcec5e0e15728"
+            ]
+        ]
+    },
+    {
+        "id": "1ed8383cacd16720",
+        "type": "telegram receiver",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 270,
+        "y": 940,
+        "wires": [
+            [
+                "87c5167fcef0f2dc",
+                "8dcb93e6f9186e4a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8bbf71baaf2d7abc",
+        "type": "telegram sender",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "327fcec5e0e15728",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Envio Telegram",
+        "func": "msg.payload = {\nchatId: global.get(\"chatId\"),\ntype: \"message\",\ncontent: \"TESTEEEEEEEEEEEEEEEE?\" //conteudo da msg\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1020,
+        "wires": [
+            [
+                "8bbf71baaf2d7abc"
+            ]
+        ]
+    },
+    {
+        "id": "8dcb93e6f9186e4a",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Chatld",
+        "func": "let chatId = msg.payload.chatId;\nglobal.set(\"chatId\",chatId)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87c5167fcef0f2dc",
+        "type": "debug",
+        "z": "fc337c62658e234d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "dd8c34b3d84ec1be",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Envio Telegram",
+        "func": "let dados = msg.payload;\n\nlet texto = \"```\\nTemperatura (ºC) | Pressão (bar)\\n\";\nfor (let index of dados) {\n    texto += `${index.temperatura.toString().padEnd(20)} | ${index.pressao}\\n`;\n}\ntexto += \"```\";\n\nmsg.payload = {\n    chatId: global.get(\"chatId\"),\n    type: \"message\",\n    content: texto,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 500,
+        "wires": [
+            [
+                "8e173828df26cb6f"
+            ]
+        ]
+    },
+    {
+        "id": "8e173828df26cb6f",
+        "type": "telegram sender",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1010,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbfbc222fa6ff972",
+        "type": "debug",
+        "z": "fc337c62658e234d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "7e2a4a06e8643264",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Montar SQL",
+        "func": "if (msg.payload.content == \"Ler Dados\") {\n    msg.topic = \"SELECT * FROM dados_sensores LIMIT 10;\";\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 660,
+        "wires": [
+            [
+                "b6f59eca7840655a"
+            ]
+        ]
+    },
+    {
+        "id": "b6f59eca7840655a",
+        "type": "mysql",
+        "z": "fc337c62658e234d",
+        "mydb": "f7b91b2886f590ff",
+        "name": "MySQL",
+        "x": 640,
+        "y": 660,
+        "wires": [
+            [
+                "3aac556e59917736",
+                "4dbd365cea9305ca"
+            ]
+        ]
+    },
+    {
+        "id": "3aac556e59917736",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Envio Telegram",
+        "func": "let dados = msg.payload;\n\nlet texto = \"```\\nTemperatura (ºC) | Pressão (bar)\\n\";\nfor (let index of dados) {\n    texto += `${index.temperatura.toString().padEnd(20)} | ${index.pressao}\\n`;\n}\ntexto += \"```\";\n\nmsg.payload = {\n    chatId: global.get(\"chatId\"),\n    type: \"message\",\n    content: texto,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 660,
+        "wires": [
+            [
+                "3ca4f56d7512e6dc"
+            ]
+        ]
+    },
+    {
+        "id": "3ca4f56d7512e6dc",
+        "type": "telegram sender",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1070,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4dbd365cea9305ca",
+        "type": "debug",
+        "z": "fc337c62658e234d",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e27ee1a24a49afa4",
+        "type": "telegram receiver",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 190,
+        "y": 660,
+        "wires": [
+            [
+                "7e2a4a06e8643264"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "99bbee920d7ed152",
+        "type": "function",
+        "z": "fc337c62658e234d",
+        "name": "Montar SQL",
+        "func": "if (msg.payload.content == \"Start\") {\n    msg.payload = true;\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "ae7d977202f263e8"
+            ]
+        ]
+    },
+    {
+        "id": "3703d4ec741e9244",
+        "type": "telegram receiver",
+        "z": "fc337c62658e234d",
+        "name": "",
+        "bot": "3205de7d14feac1d",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "99bbee920d7ed152"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ec3b11727f94fc06",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://190.201.100.82:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "f7b91b2886f590ff",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "AI_B",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "3205de7d14feac1d",
+        "type": "telegram bot",
+        "botname": "NodeR8_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
