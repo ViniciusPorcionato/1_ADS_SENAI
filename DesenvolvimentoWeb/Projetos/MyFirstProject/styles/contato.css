@@ -184,7 +184,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    height: 150px;
+    }
   
   .footer-content {
     width: 90%;
