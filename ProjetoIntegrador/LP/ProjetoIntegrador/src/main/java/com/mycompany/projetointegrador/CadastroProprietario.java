@@ -82,6 +82,7 @@ public class CadastroProprietario extends javax.swing.JFrame {
 
         btn_menu.setBackground(new java.awt.Color(153, 0, 0));
         btn_menu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_menu.setForeground(new java.awt.Color(255, 255, 255));
         btn_menu.setText("VOLTAR");
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +102,7 @@ public class CadastroProprietario extends javax.swing.JFrame {
 
         btn_cadastrarCliente.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_cadastrarCliente.setForeground(new java.awt.Color(255, 255, 255));
         btn_cadastrarCliente.setText("CADASTRAR");
         btn_cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

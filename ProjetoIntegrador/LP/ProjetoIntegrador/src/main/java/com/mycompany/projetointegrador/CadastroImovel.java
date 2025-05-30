@@ -80,6 +80,7 @@ public class CadastroImovel extends javax.swing.JFrame {
 
         btn_menu.setBackground(new java.awt.Color(153, 0, 0));
         btn_menu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_menu.setForeground(new java.awt.Color(255, 255, 255));
         btn_menu.setText("VOLTAR");
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,6 +302,7 @@ public class CadastroImovel extends javax.swing.JFrame {
 
         btn_cadastrarImovel.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarImovel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_cadastrarImovel.setForeground(new java.awt.Color(255, 255, 255));
         btn_cadastrarImovel.setText("CADASTRAR");
         btn_cadastrarImovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,7 +320,8 @@ public class CadastroImovel extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_menu))
+                        .addComponent(btn_menu)
+                        .addGap(21, 21, 21))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)

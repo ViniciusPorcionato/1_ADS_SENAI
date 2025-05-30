@@ -58,6 +58,7 @@ public class CadastroTipoImoveis extends javax.swing.JFrame {
 
         btn_menu.setBackground(new java.awt.Color(153, 0, 0));
         btn_menu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_menu.setForeground(new java.awt.Color(255, 255, 255));
         btn_menu.setText("VOLTAR");
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +78,7 @@ public class CadastroTipoImoveis extends javax.swing.JFrame {
 
         btn_cadastrarTipoImovel.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarTipoImovel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_cadastrarTipoImovel.setForeground(new java.awt.Color(255, 255, 255));
         btn_cadastrarTipoImovel.setText("CADASTRAR");
         btn_cadastrarTipoImovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

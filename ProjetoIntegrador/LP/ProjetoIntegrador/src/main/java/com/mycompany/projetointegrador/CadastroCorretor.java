@@ -80,6 +80,7 @@ public class CadastroCorretor extends javax.swing.JFrame {
 
         btn_menu.setBackground(new java.awt.Color(153, 0, 0));
         btn_menu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_menu.setForeground(new java.awt.Color(255, 255, 255));
         btn_menu.setText("VOLTAR");
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +100,7 @@ public class CadastroCorretor extends javax.swing.JFrame {
 
         btn_cadastrarCorretor.setBackground(new java.awt.Color(153, 0, 0));
         btn_cadastrarCorretor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_cadastrarCorretor.setForeground(new java.awt.Color(255, 255, 255));
         btn_cadastrarCorretor.setText("CADASTRAR");
         btn_cadastrarCorretor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,7 +328,7 @@ public class CadastroCorretor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(41, 41, 41)

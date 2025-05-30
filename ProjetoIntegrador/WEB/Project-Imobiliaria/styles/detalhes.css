@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .content-header {
@@ -65,7 +66,6 @@
 /* Estilos específicos para a página de detalhes */
 .property-details {
   padding: 60px 0;
-  background-color: #f9f9f9;
 }
 
 .details-container {
