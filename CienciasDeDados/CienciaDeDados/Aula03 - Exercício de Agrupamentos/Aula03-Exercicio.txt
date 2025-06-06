@@ -1,0 +1,13 @@
+Crie um jupyter notebook, que irá carregar o dataset: Dataset_de_Transporte.csv e em seguida, responda às seguintes questões
+
+Qual a média de idade das pessoas em cada cidade?
+Qual o meio de transporte mais utilizado em cada cidade?
+Existe alguma correlação entre idade e meio de transporte utilizado?
+Qual a distribuição etária das pessoas em cada meio de transporte?
+Qual cidade apresenta a maior diversidade de meios de transporte utilizados?Gráficos:
+
+– Qual a distribuição etária das pessoas que usam cada meio de transporte?
+– Como varia a média de idade entre as cidades?
+– Qual meio de transporte é mais popular em cada cidade?
+– Quantos meios de transporte diferentes são usados em cada cidade?
+– Existe variação significativa de idade entre os diferentes meios de transporte?
