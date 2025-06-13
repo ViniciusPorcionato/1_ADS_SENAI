@@ -46,7 +46,7 @@ public class Loading extends javax.swing.JFrame implements Runnable {
         jPanel1.add(progressBar);
         progressBar.setBounds(280, 290, 540, 30);
 
-        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\25170641\\Desktop\\1_ADS_SENAI\\ProjetoIntegrador\\LP\\ProjetoIntegrador\\Assets\\Logo.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\porci\\OneDrive\\Área de Trabalho\\1_ADS_SENAI\\ProjetoIntegrador\\LP\\ProjetoIntegrador\\Assets\\Logo.png")); // NOI18N
         jPanel1.add(logo);
         logo.setBounds(420, 200, 230, 70);
 
